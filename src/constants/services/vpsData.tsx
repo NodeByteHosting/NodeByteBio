@@ -22,8 +22,8 @@ export const VPS_DATA_ITEMS_MARQUEE: DataItem[] = [
 export const VPS_DATA_CARDS: DataCard[] = [
     {
         faqs: VPS_FAQ,
-        title: "Basic",
-        price: "$9.44 USD",
+        title: "Small",
+        price: "£9.25 GBP",
         location: "Newcastle",
         link: "https://billing.nodebyte.host/store/vps-hosting",
         featuresBrief: [
@@ -38,7 +38,7 @@ export const VPS_DATA_CARDS: DataCard[] = [
             { text: "2 vCPU Core AMD Ryzen™ 9 5900X", icon: <Cpu /> },
             { text: "4 Gigabytes of DDR4 RAM", icon: <MemoryStick /> },
             { text: "FyfeWeb DDoS Protection", icon: <Shield />, link: "https://fyfeweb.com/our-network" },
-            { text: "40GB NVMe Solid State Drive", icon: <HardDrive /> },
+            { text: "64GB NVMe Solid State Drive", icon: <HardDrive /> },
             { text: "1GB/s Network Speeds", icon: <Globe /> },
             { text: "Virtualizor Control Panel ", icon: <Settings /> },
         ],
@@ -52,8 +52,8 @@ export const VPS_DATA_CARDS: DataCard[] = [
     },
     {
         faqs: VPS_FAQ,
-        title: "Advanced",
-        price: "$18.89 USD",
+        title: "Newcastle",
+        price: "£13.75 GBP",
         location: "TBD",
         link: "https://billing.nodebyte.host/store/vps-hosting",
         featuresBrief: [
@@ -65,10 +65,10 @@ export const VPS_DATA_CARDS: DataCard[] = [
             { text: "99.6% Uptime", icon: <LineChart /> },
         ],
         featuresFull: [
-            { text: "4 vCPU Core AMD Ryzen™ 9 5900X", icon: <Cpu /> },
-            { text: "8 Gigabytes of DDR4 RAM", icon: <MemoryStick /> },
+            { text: "3 vCPU Core AMD Ryzen™ 9 5900X", icon: <Cpu /> },
+            { text: "6 Gigabytes of DDR4 RAM", icon: <MemoryStick /> },
             { text: "FyfeWeb DDoS Protection", icon: <Shield />, link: "https://fyfeweb.com/our-network" },
-            { text: "80GB NVMe Solid State Drive", icon: <HardDrive /> },
+            { text: "96GB NVMe Solid State Drive", icon: <HardDrive /> },
             { text: "1GB/s Network Speeds", icon: <Globe /> },
             { text: "Virtualizor Control Panel ", icon: <Settings /> },
         ],
@@ -80,35 +80,4 @@ export const VPS_DATA_CARDS: DataCard[] = [
         recommended: false,
         featured: false
     },
-    {
-        faqs: VPS_FAQ,
-        title: "Pro",
-        price: "$37.77 USD",
-        location: "TBD",
-        link: "https://billing.nodebyte.host/store/vps-hosting",
-        featuresBrief: [
-            { text: "AMD Processor", icon: <Cpu /> },
-            { text: "DDR4 RAM", icon: <MemoryStick /> },
-            { text: "FyfeWeb DDOS", icon: <Shield /> },
-            { text: "SSD Storage", icon: <HardDrive /> },
-            { text: "Intuitive Panel", icon: <Settings /> },
-            { text: "99.6% Uptime", icon: <LineChart /> },
-        ],
-        featuresFull: [
-            { text: "8 vCPU Core AMD Ryzen™ 9 5900X", icon: <Cpu /> },
-            { text: "16 Gigabytes of DDR4 RAM", icon: <MemoryStick /> },
-            { text: "FyfeWeb DDoS Protection", icon: <Shield />, link: "https://fyfeweb.com/our-network" },
-            { text: "160GB NVMe Solid State Drive", icon: <HardDrive /> },
-            { text: "1GB/s Network Speeds", icon: <Globe /> },
-            { text: "Virtualizor Control Panel ", icon: <Settings /> },
-        ],
-        marqueeItems: [...VPS_DATA_ITEMS_MARQUEE],
-        comingSoon: false,
-        outOfStock: true,
-        hideLocation: true,
-        limitedQuantity: false,
-        limitedTime: false,
-        recommended: false,
-        featured: false
-    }
 ];
