@@ -44,7 +44,7 @@ export const VPS_DATA_CARDS: DataCard[] = [
         ],
         marqueeItems: [...VPS_DATA_ITEMS_MARQUEE],
         outOfStock: false,
-        stockCount: 9,
+        stockCount: 4,
         limitedQuantity: true,
         limitedTime: false,
         recommended: false,
@@ -52,9 +52,9 @@ export const VPS_DATA_CARDS: DataCard[] = [
     },
     {
         faqs: VPS_FAQ,
-        title: "Newcastle",
+        title: "Meduim",
         price: "£13.75 GBP",
-        location: "TBD",
+        location: "Newcastle",
         link: "https://billing.nodebyte.host/store/vps-hosting",
         featuresBrief: [
             { text: "AMD Processor", icon: <Cpu /> },
@@ -73,11 +73,11 @@ export const VPS_DATA_CARDS: DataCard[] = [
             { text: "Virtualizor Control Panel ", icon: <Settings /> },
         ],
         marqueeItems: [...VPS_DATA_ITEMS_MARQUEE],
-        comingSoon: true,
         outOfStock: false,
-        limitedQuantity: false,
+        stockCount: 4,
+        limitedQuantity: true,
         limitedTime: false,
-        recommended: false,
+        recommended: true,
         featured: false
     },
 ];
