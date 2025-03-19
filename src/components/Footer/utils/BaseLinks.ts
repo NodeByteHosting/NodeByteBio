@@ -35,10 +35,6 @@ export const BASE_LINKS = [
                 value: "Join the Team",
                 href: "/careers",
             },
-            {
-                value: "Community Pulse",
-                href: "kb"
-            },
         ],
     },
     {

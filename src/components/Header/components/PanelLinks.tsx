@@ -30,13 +30,6 @@ const PanelLinksDropdown = () => {
                 <div className="absolute right-0 mt-52 w-48 bg-gradient-to-tl from-grey-900 via-dark_gray to-black rounded-md shadow-lg z-10">
                     <div className="py-2">
                         <a
-                            href="/bytepanel"
-                            target="_blank"
-                            className="block px-4 py-2 text-white hover:text-blue"
-                        >
-                            BytePanel v2
-                        </a>
-                        <a
                             href="https://billing.nodebyte.host"
                             target="_blank"
                             className="block px-4 py-2 text-white hover:text-blue"
@@ -56,13 +49,6 @@ const PanelLinksDropdown = () => {
                             className="block px-4 py-2 text-white hover:text-blue"
                         >
                             VPS Panel
-                        </a>
-                        <a
-                            href="https://demo.nodebyte.host/"
-                            target="_blank"
-                            className="block px-4 py-2 text-white hover:text-blue"
-                        >
-                            Demo Panel
                         </a>
                     </div>
                 </div>
