@@ -6,9 +6,14 @@
             "title": "Automation"
         },
         {
-            "name": "Toxic Dev",
-            "icon": "https://toxicdev.me/ToxicDevLogo.jpg",
-            "title": "Chief Business Officer"
+            "name": "Tyler",
+            "icon": "hhttps://cdn.discordapp.com/avatars/510065483693817867/a60b21cacddaa9043bc03b8ae41179f4.webp?size=512",
+            "title": "Chief Operations Officer"
+        },
+        {
+            "name": "Connor",
+            "icon": "https://cdn.discordapp.com/avatars/1173430998176899133/6879962d0106fdea1d11134ab941bdb0.webp?size=512",
+            "title": "Chief Executive Officer"
         }
     ]
 }
