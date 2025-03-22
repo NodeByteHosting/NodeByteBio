@@ -27,7 +27,7 @@ export const Footer: FC = ({ }) => {
     },
     {
       title: "Discord",
-      href: "https://discord.gg/NAphFuVm2V",
+      href: "https://discord.gg/nuh57Q69tq",
       icon: <BsDiscord className="w-6 h-6 text-white" />,
     },
     {
