@@ -163,7 +163,7 @@ export const Header: FC = () => {
               <div
                 className={`${s.Copyright} pt-2 mx-2 text-center text-gray text-sm mt-4  border-t-1 border-gray/10`}
               >
-                &copy; 2025 NodeByte LTD | All rights reserved.
+                &copy; 2025 NodeByte LTD | All rights reserved | Registered in England and Wales Registration Number: 15432941
               </div>
             </NavbarMenu>
           </section>

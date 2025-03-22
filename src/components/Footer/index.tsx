@@ -99,7 +99,7 @@ export const Footer: FC = ({ }) => {
       </div>
       <section className={`${s.Copyright} bg-gray/5 border-t-1 border-gray/10`}>
         <div className="text-gray">
-          &copy; 2025 NodeByte LTD | All rights reserved.
+          &copy; 2025 NodeByte LTD | All rights reserved | Registered in England and Wales Registration Number: 15432941
         </div>
       </section>
     </footer>

@@ -24,10 +24,6 @@ export const DATA_TOGGLE_MENU_LINKS = [
         title: "Portals",
         links: [
             {
-                value: "BytePanel v2",
-                href: "/bytepanel"
-            },
-            {
                 value: "Billing Portal",
                 href: "https://billing.nodebyte.host",
             },
