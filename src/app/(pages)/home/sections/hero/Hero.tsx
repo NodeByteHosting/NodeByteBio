@@ -48,7 +48,7 @@ export const Hero: FC = ({ }) => {
               NodeByte Hosting
             </motion.h1>
             <motion.p custom={3} variants={animation} className="text-white/70">
-              Fast, reliable, scalable and secure hosting services for your business or gaming experience.{" "}
+              Fast, reliable, scalable and secure hosting services for your gaming experience.{" "}
             </motion.p>
           </motion.section>
         </section>

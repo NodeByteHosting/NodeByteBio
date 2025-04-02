@@ -35,12 +35,6 @@ const ServiceLinksDropdown = () => {
                         >
                             Minecraft Servers
                         </a>
-                        <a
-                            href="/services/vps"
-                            className="block px-4 py-2 text-white hover:text-blue"
-                        >
-                            VPS Servers
-                        </a>
                     </div>
                 </div>
             )}

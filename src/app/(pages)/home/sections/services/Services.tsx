@@ -29,25 +29,6 @@ export const Services: FC = ({ }) => {
       ],
       link: "https://billing.nodebyte.host/store/minecraft-server-hosting"
     },
-    {
-      title: "Virtual Private Servers",
-      info: "Grab yourself a VPS and start hosting your own services.",
-      features: [
-        {
-          text: "99.6% Uptime SLA",
-        },
-        {
-          text: "Virtualizor Panel",
-        },
-        {
-          text: "FyfeWeb Net",
-        },
-        {
-          text: "SSD Storage",
-        }
-      ],
-      link: "https://billing.nodebyte.host/store/vps-hosting"
-    },
     // {
     //   title: "Custom Minecraft Plans",
     //   info: "Grab yourself a custom Minecraft Plan and start hosting with specs you want!",

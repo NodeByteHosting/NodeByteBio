@@ -43,13 +43,6 @@ const PanelLinksDropdown = () => {
                         >
                             Game Panel
                         </a>
-                        <a
-                            href="https://vps.nodebyte.host:4083/#act=listvs&"
-                            target="_blank"
-                            className="block px-4 py-2 text-white hover:text-blue"
-                        >
-                            VPS Panel
-                        </a>
                     </div>
                 </div>
             )}

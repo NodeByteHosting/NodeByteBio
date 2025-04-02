@@ -9,11 +9,6 @@ export const Advantages: FC = ({ }) => {
   const { targetRef } = useContext(useButtonScrollContext);
   const DATA_CARDS = [
     {
-      icon: <Server strokeWidth={1.5} size={24} />,
-      title: "VPS Excellence",
-      content: "Achieve unparalleled performance and reliability with our VPS solutions, boasting scalable resources and a 99.6% uptime.",
-    },
-    {
       icon: <Gamepad2 strokeWidth={1.5} size={24} />,
       title: "Minecraft Bliss",
       content: "Enjoy lag-free gaming on our robust Minecraft servers, optimized for an extraordinary and immersive experience.",
@@ -77,7 +72,7 @@ export const Advantages: FC = ({ }) => {
               Why choose us?
             </motion.h2>
             <motion.p variants={animation} custom={3} className="text-gray">
-              At NodeByte Hosting, we provide top-notch virtual private servers (VPS) and Minecraft servers tailored to meet your needs. Our services ensure high performance, reliability, and security for your business or gaming experience.
+              At NodeByte Hosting, we provide top-notch minecraft servers tailored to meet your needs. Our services ensure high performance, reliability, and security for gaming experience.
             </motion.p>
           </motion.section>
           <section className={s.Content}>

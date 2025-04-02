@@ -46,8 +46,8 @@ export const TermsOfService: FC = ({ }) => {
                 text="The stuff no one wants to read but everyone should know."
                 sup={{
                     title1: "Last updated:",
-                    title2: "21st",
-                    title3: "03",
+                    title2: "2nd",
+                    title3: "04",
                     title4: "2025"
 }}
             />

@@ -31,10 +31,7 @@ export const DATA_TOGGLE_MENU_LINKS = [
                 value: "Game Panel",
                 href: "https://panel.nodebyte.host",
             },
-            {
-                value: "VPS Panel",
-                href: "https://vps.nodebyte.host/"
-            },
+            
         ],
     },
     {
@@ -61,10 +58,6 @@ export const DATA_TOGGLE_MENU_LINKS = [
                 value: "Minecraft Servers",
                 href: "/services/mc",
             },
-            {
-                value: "VPS Servers",
-                href: "/services/vps"
-            }
         ],
     },
     {
