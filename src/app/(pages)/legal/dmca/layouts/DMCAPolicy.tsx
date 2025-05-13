@@ -46,8 +46,8 @@ export const DMCAPolicy: FC = ({ }) => {
                 text="The stuff no one wants to read but everyone should know."
                 sup={{
                     title1: "Last updated:",
-                    title2: "22nd",
-                    title3: "03",
+                    title2: "13th",
+                    title3: "05",
                     title4: "2025"
 }}
             />

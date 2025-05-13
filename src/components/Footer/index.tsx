@@ -74,8 +74,7 @@ export const Footer: FC = ({ }) => {
             <div className={s.Subscribe}>
               <h5 className="text-white">Subscribe to our newsletter</h5>
               <p className="text-white/50">
-                Stay updated on new releases and features, guides, and case
-                studies.
+                This is under Development!
               </p>
               <FooterForm />
               <div className={s.Social}>
@@ -99,7 +98,7 @@ export const Footer: FC = ({ }) => {
       </div>
       <section className={`${s.Copyright} bg-gray/5 border-t-1 border-gray/10`}>
         <div className="text-gray">
-          &copy; 2025 NodeByte LTD | All rights reserved | Registered in England and Wales Registration Number: 15432941
+          &copy; 2025 NodeByte LTD | <Link href="https://toxicdev.me" className="hover:underline">All Rights Reserved | </Link><Link href="https://find-and-update.company-information.service.gov.uk/company/15432941" className="hover:underline">Registered Number: 15432941</Link> | Tel: 03301334561 | <Link href="https://maps.app.goo.gl/iPZVk4URKJsLFaMV6" className="hover:underline">20 Wenlock Road, London, England, N1 7GU</Link>
         </div>
       </section>
     </footer>
