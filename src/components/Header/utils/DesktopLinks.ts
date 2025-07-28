@@ -11,8 +11,4 @@ export const DATA_NAVBAR_LINKS = [
         value: "Blog",
         href: "/blog",
     },
-    {
-        value: "Partners",
-        href: "partners",
-    },
 ];
