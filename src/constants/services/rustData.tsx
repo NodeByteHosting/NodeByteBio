@@ -24,7 +24,7 @@ export const briefRustFeatures: Feature[] = [
     {
         text: "FyfeWeb Net",
         icon: <Globe />,
-        link: "https://fyfeweb.com /our-network"
+        link: "https://fyfeweb.com/our-network"
     },
     { text: "10 Databases", icon: <Database /> },
     { text: "99.6% Uptime", icon: <Shield /> }
@@ -43,7 +43,7 @@ export const RUST_DATA_CARDS: DataCard[] = [
             {
                 text: "FyfeWeb DDoS Protection",
                 icon: <Shield />,
-                link: "https://fyfeweb.com /our-network"
+                link: "https://fyfeweb.com/our-network"
             },
             { text: "150GB NVMe Solid State Drive", icon: <HardDrive /> },
             { text: "1GB/s Network Speeds", icon: <Globe /> },
@@ -54,7 +54,7 @@ export const RUST_DATA_CARDS: DataCard[] = [
             { text: "10 MySQL Databases", icon: <Database /> },
             { text: "99.6% Uptime SLA", icon: <Shield /> },
         ],
-        link: "https://billing.nodebyte.host/store/minecraft-server-hosting",
+        link: "https://billing.nodebyte.host/store/rust-hosting/starter",
         outOfStock: false,
         limitedQuantity: false,
         limitedTime: false,
@@ -73,7 +73,7 @@ export const RUST_DATA_CARDS: DataCard[] = [
             {
                 text: "FyfeWeb DDoS Protection",
                 icon: <Shield />,
-                link: "https://fyfeweb.com /our-network"
+                link: "https://fyfeweb.com/our-network"
             },
             { text: "200GB NVMe Solid State Drive", icon: <HardDrive /> },
             { text: "1GB/s Network Speeds", icon: <Globe /> },
@@ -84,7 +84,7 @@ export const RUST_DATA_CARDS: DataCard[] = [
             { text: "10 MySQL Databases", icon: <Database /> },
             { text: "99.6% Uptime SLA", icon: <Shield /> }
         ],
-        link: "https://billing.nodebyte.host/store/minecraft-server-hosting",
+        link: "https://billing.nodebyte.host/store/rust-hosting/standard",
         outOfStock: false,
         limitedQuantity: false,
         limitedTime: false,
@@ -103,7 +103,7 @@ export const RUST_DATA_CARDS: DataCard[] = [
             {
                 text: "FyfeWeb DDoS Protection",
                 icon: <Shield />,
-                link: "https://fyfeweb.com /our-network"
+                link: "https://fyfeweb.com/our-network"
             },
             { text: "250GB NVMe Solid State Drive", icon: <HardDrive /> },
             { text: "1GB/s Network Speeds", icon: <Globe /> },
@@ -114,7 +114,7 @@ export const RUST_DATA_CARDS: DataCard[] = [
             { text: "10 MySQL Databases", icon: <Database /> },
             { text: "99.6% Uptime SLA", icon: <Shield /> }
         ],
-        link: "https://billing.nodebyte.host/store/minecraft-server-hosting",
+        link: "https://billing.nodebyte.host/store/rust-hosting/performance",
         outOfStock: false,
         limitedQuantity: false,
         limitedTime: false,
@@ -133,18 +133,18 @@ export const RUST_DATA_CARDS: DataCard[] = [
             {
                 text: "FyfeWeb DDoS Protection",
                 icon: <Shield />,
-                link: "https://fyfeweb.com /our-network"
+                link: "https://fyfeweb.com/our-network"
             },
             { text: "350GB NVMe Solid State Drive", icon: <HardDrive /> },
             { text: "1GB/s Network Speeds", icon: <Globe /> },
             { text: "BytePanel ", icon: <Settings2Icon /> },
             { text: "Mod Support", icon: <PlugIcon /> },
             { text: "Rust+ Support", icon: <TabletSmartphone /> },
-            { text: "Recommended for 200 Players", icon: <User /> },
+            { text: "Recommended for 200+ Players", icon: <User /> },
             { text: "10 MySQL Databases", icon: <Database /> },
             { text: "99.6% Uptime SLA", icon: <Shield /> }
         ],
-        link: "https://billing.nodebyte.host/store/minecraft-server-hosting",
+        link: "https://billing.nodebyte.host/store/rust-hosting/premium",
         outOfStock: false,
         limitedQuantity: false,
         limitedTime: false,

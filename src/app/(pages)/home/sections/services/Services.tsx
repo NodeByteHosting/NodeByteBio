@@ -33,7 +33,7 @@ export const Services: FC = ({ }) => {
           text: "Unlimited Players (You set the limit)" 
         }
       ],
-      link: "https://billing.nodebyte.host/store/minecraft-server-hosting"
+      link: "/services/mc"
     },
     {
       title: "Rust",
@@ -58,7 +58,7 @@ export const Services: FC = ({ }) => {
           text: "Rust+ Support"
         }
       ],
-      link: "https://billing.nodebyte.host/store/rust"
+      link: "/services/rust"
     }
   ];
   const DATA_ITEMS_MARQUEE = [

@@ -22,7 +22,7 @@ export const briefMinecraftFeatures: Feature[] = [
     {
         text: "FyfeWeb Net",
         icon: <Globe />,
-        link: "https://fyfeweb.com /our-network"
+        link: "https://fyfeweb.com/our-network"
     },
     { text: "10 Databases", icon: <Database /> },
     { text: "99.6% Uptime", icon: <Shield /> }
@@ -50,7 +50,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
             {
                 text: "FyfeWeb DDoS Protection",
                 icon: <Shield />,
-                link: "https://fyfeweb.com /our-network"
+                link: "https://fyfeweb.com/our-network"
             },
             { text: "40GB NVMe Solid State Drive", icon: <HardDrive /> },
             { text: "1GB/s Network Speeds", icon: <Globe /> },
@@ -60,7 +60,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
             { text: "99.6% Uptime SLA", icon: <Shield /> }
         ],
         marqueeItems: [...marqueeItems],
-        link: "https://billing.nodebyte.host/store/minecraft-server-hosting",
+        link: "https://billing.nodebyte.host/store/minecraft-server-hosting/ember",
         outOfStock: false,
         limitedQuantity: false,
         limitedTime: false,
@@ -79,7 +79,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
             {
                 text: "FyfeWeb DDoS Protection",
                 icon: <Shield />,
-                link: "https://fyfeweb.com /our-network"
+                link: "https://fyfeweb.com/our-network"
             },
             { text: "60GB NVMe Solid State Drive", icon: <HardDrive /> },
             { text: "1GB/s Network Speeds", icon: <Globe /> },
@@ -89,7 +89,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
             { text: "99.6% Uptime SLA", icon: <Shield /> }
         ],
         marqueeItems: [...marqueeItems],
-        link: "https://billing.nodebyte.host/store/minecraft-server-hosting",
+        link: "https://billing.nodebyte.host/store/minecraft-server-hosting/blaze",
         outOfStock: false,
         limitedQuantity: false,
         limitedTime: false,
@@ -108,7 +108,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
             {
                 text: "FyfeWeb DDoS Protection",
                 icon: <Shield />,
-                link: "https://fyfeweb.com /our-network"
+                link: "https://fyfeweb.com/our-network"
             },
             { text: "80GB NVMe Solid State Drive", icon: <HardDrive /> },
             { text: "1GB/s Network Speeds", icon: <Globe /> },
@@ -118,7 +118,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
             { text: "99.6% Uptime SLA", icon: <Shield /> }
         ],
         marqueeItems: [...marqueeItems],
-        link: "https://billing.nodebyte.host/store/minecraft-server-hosting",
+        link: "https://billing.nodebyte.host/store/minecraft-server-hosting/inferno",
         outOfStock: false,
         limitedQuantity: false,
         limitedTime: false,
@@ -137,7 +137,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
             {
                 text: "FyfeWeb DDoS Protection",
                 icon: <Shield />,
-                link: "https://fyfeweb.com /our-network"
+                link: "https://fyfeweb.com/our-network"
             },
             { text: "160GB NVMe Solid State Drive", icon: <HardDrive /> },
             { text: "1GB/s Network Speeds", icon: <Globe /> },
@@ -147,37 +147,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
             { text: "99.6% Uptime SLA", icon: <Shield /> }
         ],
         marqueeItems: [...marqueeItems],
-        link: "https://billing.nodebyte.host/store/minecraft-server-hosting",
-        outOfStock: false,
-        limitedQuantity: false,
-        limitedTime: false,
-        recommended: false,
-        featured: false,
-    },
-    {
-        faqs: MINECRAFT_FAQ,
-        title: "Phoenix",
-        price: "$28.33 USD",
-        location: "TBA",
-        featuresBrief: [...briefMinecraftFeatures],
-        featuresFull: [
-            { text: "AMD Ryzen™ 9 5900X", icon: <Cpu /> },
-            { text: "24 Gigabytes of DDR4 RAM", icon: <MemoryStick /> },
-            {
-                text: "FyfeWeb DDoS Protection",
-                icon: <Shield />,
-                link: "https://fyfeweb.com /our-network"
-            },
-            { text: "240GB NVMe Solid State Drive", icon: <HardDrive /> },
-            { text: "1GB/s Network Speeds", icon: <Globe /> },
-            { text: "BytePanel ", icon: <Settings2Icon /> },
-            { text: "Automatic/Pre-Installed JARs", icon: <PlugIcon /> },
-            { text: "10 MySQL Databases", icon: <Database /> },
-            { text: "99.6% Uptime SLA", icon: <Shield /> }
-        ],
-        marqueeItems: [...marqueeItems],
-        link: "https://billing.nodebyte.host/store/minecraft-server-hosting",
-        comingSoon: true,
+        link: "https://billing.nodebyte.host/store/minecraft-server-hosting/firestorm",
         outOfStock: false,
         limitedQuantity: false,
         limitedTime: false,
@@ -206,7 +176,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
             { text: "99.6% Uptime SLA", icon: <Shield /> }
         ],
         marqueeItems: [...marqueeItems],
-        link: "https://billing.nodebyte.host/store/minecraft-server-hosting",
+        link: "https://billing.nodebyte.host/store/minecraft-server-hosting/supernova",
         outOfStock: false,
         limitedQuantity: false,
         limitedTime: false,
