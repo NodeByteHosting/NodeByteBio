@@ -17,7 +17,7 @@ export const briefMinecraftFeatures: Feature[] = [
     { text: "AMD Processor", icon: <Cpu /> },
     { text: "DDR4 RAM", icon: <MemoryStick /> },
     { text: "SSD Storage", icon: <HardDrive /> },
-    { text: "Intuitive Panel", icon: <Settings /> },
+    { text: "BytePanel", icon: <Settings /> },
     { text: "Custom JARs", icon: <PlugIcon /> },
     {
         text: "FyfeWeb Net",
@@ -41,7 +41,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
     {
         faqs: MINECRAFT_FAQ,
         title: "Ember",
-        price: "$5.04 USD",
+        price: "£4.00 GBP",
         location: "Newcastle",
         featuresBrief: [...briefMinecraftFeatures],
         featuresFull: [
@@ -54,7 +54,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
             },
             { text: "40GB NVMe Solid State Drive", icon: <HardDrive /> },
             { text: "1GB/s Network Speeds", icon: <Globe /> },
-            { text: "Pterodactyl Control Panel ", icon: <Settings2Icon /> },
+            { text: "BytePanel ", icon: <Settings2Icon /> },
             { text: "Automatic/Pre-Installed JARs", icon: <PlugIcon /> },
             { text: "10 MySQL Databases", icon: <Database /> },
             { text: "99.6% Uptime SLA", icon: <Shield /> }
@@ -70,7 +70,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
     {
         faqs: MINECRAFT_FAQ,
         title: "Blaze",
-        price: "$7.55 USD",
+        price: "£6.00 GBP",
         location: "Newcastle",
         featuresBrief: [...briefMinecraftFeatures],
         featuresFull: [
@@ -83,7 +83,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
             },
             { text: "60GB NVMe Solid State Drive", icon: <HardDrive /> },
             { text: "1GB/s Network Speeds", icon: <Globe /> },
-            { text: "Pterodactyl Control Panel ", icon: <Settings2Icon /> },
+            { text: "BytePanel ", icon: <Settings2Icon /> },
             { text: "Automatic/Pre-Installed JARs", icon: <PlugIcon /> },
             { text: "10 MySQL Databases", icon: <Database /> },
             { text: "99.6% Uptime SLA", icon: <Shield /> }
@@ -99,7 +99,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
     {
         faqs: MINECRAFT_FAQ,
         title: "Inferno",
-        price: "$9.44 USD",
+        price: "£7.50 GBP",
         location: "Newcastle",
         featuresBrief: [...briefMinecraftFeatures],
         featuresFull: [
@@ -112,7 +112,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
             },
             { text: "80GB NVMe Solid State Drive", icon: <HardDrive /> },
             { text: "1GB/s Network Speeds", icon: <Globe /> },
-            { text: "Pterodactyl Control Panel ", icon: <Settings2Icon /> },
+            { text: "BytePanel ", icon: <Settings2Icon /> },
             { text: "Automatic/Pre-Installed JARs", icon: <PlugIcon /> },
             { text: "10 MySQL Databases", icon: <Database /> },
             { text: "99.6% Uptime SLA", icon: <Shield /> }
@@ -128,7 +128,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
     {
         faqs: MINECRAFT_FAQ,
         title: "Firestorm",
-        price: "$18.89 USD",
+        price: "£15.00 GBP",
         location: "Newcastle",
         featuresBrief: [...briefMinecraftFeatures],
         featuresFull: [
@@ -141,7 +141,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
             },
             { text: "160GB NVMe Solid State Drive", icon: <HardDrive /> },
             { text: "1GB/s Network Speeds", icon: <Globe /> },
-            { text: "Pterodactyl Control Panel ", icon: <Settings2Icon /> },
+            { text: "BytePanel ", icon: <Settings2Icon /> },
             { text: "Automatic/Pre-Installed JARs", icon: <PlugIcon /> },
             { text: "10 MySQL Databases", icon: <Database /> },
             { text: "99.6% Uptime SLA", icon: <Shield /> }
@@ -170,7 +170,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
             },
             { text: "240GB NVMe Solid State Drive", icon: <HardDrive /> },
             { text: "1GB/s Network Speeds", icon: <Globe /> },
-            { text: "Pterodactyl Control Panel ", icon: <Settings2Icon /> },
+            { text: "BytePanel ", icon: <Settings2Icon /> },
             { text: "Automatic/Pre-Installed JARs", icon: <PlugIcon /> },
             { text: "10 MySQL Databases", icon: <Database /> },
             { text: "99.6% Uptime SLA", icon: <Shield /> }
@@ -187,7 +187,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
     {
         faqs: MINECRAFT_FAQ,
         title: "Supernova",
-        price: "$37.77 USD",
+        price: "£30.00 GBP",
         location: "Newcastle",
         featuresBrief: [...briefMinecraftFeatures],
         featuresFull: [
@@ -200,7 +200,7 @@ export const MINECRAFT_DATA_CARDS: DataCard[] = [
             },
             { text: "320GB NVMe Solid State Drive", icon: <HardDrive /> },
             { text: "1GB/s Network Speeds", icon: <Globe /> },
-            { text: "Pterodactyl Control Panel ", icon: <Settings2Icon /> },
+            { text: "BytePanel ", icon: <Settings2Icon /> },
             { text: "Automatic/Pre-Installed JARs", icon: <PlugIcon /> },
             { text: "10 MySQL Databases", icon: <Database /> },
             { text: "99.6% Uptime SLA", icon: <Shield /> }

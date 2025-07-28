@@ -34,7 +34,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     outOfStock = false,
     comingSoon = false,
     faqs,
-    marqueeItems,
+    marqueeItems = [],
 }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 

@@ -6,9 +6,9 @@ interface AnimatedPriceProps {
 }
 
 const currencies = [
+    { symbol: "£", code: "GBP" },
     { symbol: "$", code: "USD" },
     { symbol: "€", code: "EUR" },
-    { symbol: "£", code: "GBP" },
     { symbol: "¥", code: "JPY" },
     { symbol: "₹", code: "INR" },
     { symbol: "$", code: "CAD" },
@@ -17,7 +17,7 @@ const currencies = [
     { symbol: "¥", code: "CNY" },
 ];
 
-const API_URL = `https://api.exchangerate-api.com/v4/latest/USD`;
+const API_URL = `https://api.exchangerate-api.com/v4/latest/GBP`;
 
 const AnimatedPrice: React.FC<AnimatedPriceProps> = ({ basePrice }) => {
     const [index, setIndex] = useState(0);
@@ -39,7 +39,7 @@ const AnimatedPrice: React.FC<AnimatedPriceProps> = ({ basePrice }) => {
 
     // Handle currency switching
     useEffect(() => {
-        if (!exchangeRates.USD) return;
+        if (!exchangeRates.GBP) return;
 
         const interval = setInterval(() => {
             setIndex((prevIndex) => (prevIndex + 1) % currencies.length);
