@@ -14,7 +14,7 @@ const ServiceLinksDropdown = () => {
                 className="text-white font-medium text-sm flex items-center space-x-1"
                 onClick={toggleDropdown}
             >
-                <span>{dropdownOpen ? "Services" : 'Services'}</span>
+                <span>{dropdownOpen ? "Games" : 'Games'}</span>
                 <svg
                     className="w-4 h-4 transform transition-transform"
                     style={{ transform: dropdownOpen ? "rotate(180deg)" : "rotate(0deg)" }}
