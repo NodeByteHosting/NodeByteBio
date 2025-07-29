@@ -27,7 +27,7 @@ export const Services: FC = ({ }) => {
           text: "SSD Storage" 
         },
         {
-          text: "Bedrock Support"
+          text: "Java and Bedrock Supported"
         },
         { 
           text: "Unlimited Players (You set the limit)" 
