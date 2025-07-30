@@ -13,14 +13,6 @@ export const FAQ: FC = ({ }) => {
   };
   const DATA_ACCORDION = [
     {
-      title: "What is a Virtual Private Server (VPS)?",
-      text: "A Virtual Private Server (VPS) is a virtualized server that acts like a dedicated server within a larger physical server. It provides dedicated resources and greater control compared to shared hosting, making it ideal for businesses and developers who need reliable and scalable hosting solutions.",
-    },
-    {
-      title: "How do I set up my VPS?",
-      text: "Setting up your VPS is straightforward. Once you purchase a VPS plan, you will receive login credentials and access to a control panel where you can manage your server. You can install your preferred operating system, configure settings, and deploy applications as needed.",
-    },
-    {
       title: "What are the benefits of using a dedicated Minecraft server?",
       text: "A dedicated Minecraft server offers better performance, reliability, and customization options compared to shared hosting. It allows you to have full control over server settings, mods, and plugins, ensuring a smooth and enjoyable gaming experience for you and your players.",
     },
@@ -33,8 +25,8 @@ export const FAQ: FC = ({ }) => {
       text: "Yes, we offer 24/7 customer support to assist you with any issues or questions you may have. Our dedicated support team is available via discord, email and support tickets to ensure that you receive timely and effective assistance.",
     },
     {
-      title: "Can I upgrade or downgrade my VPS plan?",
-      text: "Yes, our VPS plans are scalable, allowing you to upgrade or downgrade your plan as needed. You can easily adjust your resources through the control panel to accommodate your changing requirements.",
+      title: "Can I upgrade or downgrade my plan?",
+      text: "Yes, all our plans are scalable, allowing you to upgrade or downgrade your plan as needed. You can easily adjust your resources through the billing panel to accommodate your changing requirements.",
     }
   ];
   // Animation

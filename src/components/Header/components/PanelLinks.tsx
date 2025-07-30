@@ -14,7 +14,7 @@ const PanelLinksDropdown = () => {
                 className="text-white font-medium text-sm flex items-center space-x-1"
                 onClick={toggleDropdown}
             >
-                <span>{dropdownOpen ? "What's this?" : 'Portals'}</span>
+                <span>{dropdownOpen ? "Client Area" : 'Client Area'}</span>
                 <svg
                     className="w-4 h-4 transform transition-transform"
                     style={{ transform: dropdownOpen ? "rotate(180deg)" : "rotate(0deg)" }}
@@ -30,13 +30,6 @@ const PanelLinksDropdown = () => {
                 <div className="absolute right-0 mt-52 w-48 bg-gradient-to-tl from-grey-900 via-dark_gray to-black rounded-md shadow-lg z-10">
                     <div className="py-2">
                         <a
-                            href="/bytepanel"
-                            target="_blank"
-                            className="block px-4 py-2 text-white hover:text-blue"
-                        >
-                            BytePanel v2
-                        </a>
-                        <a
                             href="https://billing.nodebyte.host"
                             target="_blank"
                             className="block px-4 py-2 text-white hover:text-blue"
@@ -49,20 +42,6 @@ const PanelLinksDropdown = () => {
                             className="block px-4 py-2 text-white hover:text-blue"
                         >
                             Game Panel
-                        </a>
-                        <a
-                            href="https://vps.nodebyte.host:4083/#act=listvs&"
-                            target="_blank"
-                            className="block px-4 py-2 text-white hover:text-blue"
-                        >
-                            VPS Panel
-                        </a>
-                        <a
-                            href="https://demo.nodebyte.host/"
-                            target="_blank"
-                            className="block px-4 py-2 text-white hover:text-blue"
-                        >
-                            Demo Panel
                         </a>
                     </div>
                 </div>

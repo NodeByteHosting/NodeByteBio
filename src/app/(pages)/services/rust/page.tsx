@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import ServicesHero from '@/src/components/Layouts/Services/rust/Hero';
 import ButtonScrollProvider from "providers/ButtonScroll";
-import ServicesHero from 'components/Layouts/Services/vps/Hero';
-import WhyChooseUs from "components/Layouts/Services/vps/Benefits";
-import ServersList from "components/Layouts/Services/vps/Servers";
-import { FAQ } from "components/Layouts/Services/vps/GeneralFAQs";
+import WhyChooseUs from "@/src/components/Layouts/Services/rust/Benefits";
+import ServersList from "@/src/components/Layouts/Services/rust/Servers";
+import { FAQ } from "@/src/components/Layouts/Services/rust/GeneralFAQs";
 import { absoluteUrl } from "hooks/absoluteUrl";
 
 export const metadata: Metadata = {

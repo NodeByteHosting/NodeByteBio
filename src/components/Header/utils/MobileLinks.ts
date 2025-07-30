@@ -14,19 +14,11 @@ export const DATA_TOGGLE_MENU_LINKS = [
                 value: "Blog",
                 href: "/blog"
             },
-            {
-                value: "Partners",
-                href: "partners",
-            },
         ],
     },
     {
         title: "Portals",
         links: [
-            {
-                value: "BytePanel v2",
-                href: "/bytepanel"
-            },
             {
                 value: "Billing Portal",
                 href: "https://billing.nodebyte.host",
@@ -35,14 +27,6 @@ export const DATA_TOGGLE_MENU_LINKS = [
                 value: "Game Panel",
                 href: "https://panel.nodebyte.host",
             },
-            {
-                value: "VPS Panel",
-                href: "https://vps.nodebyte.host/"
-            },
-            {
-                value: "Demo Panel",
-                href: "https://demo.nodebyte.host/"
-            }
         ],
     },
     {

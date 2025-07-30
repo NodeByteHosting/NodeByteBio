@@ -19,7 +19,7 @@ export interface DataCard {
     stockCount?: number;
     recommended: boolean;
     featured: boolean;
-    marqueeItems: { title: string }[];
+    marqueeItems?: { title: string }[];
     faqs: { question: string; answer: string; icon?: React.ReactNode }[];
 }
 
