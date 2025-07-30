@@ -11,40 +11,55 @@ import { ButtonGradient } from "ui/Button/ButtonGradient";
 export const Services: FC = ({ }) => {
   const DATA_CARDS = [
     {
-      title: "Minecraft Servers",
-      info: "Grab yourself a Minecraft server and start playing with your friends.",
+      title: "Minecraft",
+      info: "Launch your own Minecraft world instantly. Play with friends or build a community—no experience needed.",
       features: [
         {
-          text: "99.6% Uptime SLA",
+          text: "99.6% Uptime SLA" 
+        },
+        { 
+          text: "BytePanel" 
+        },
+        { 
+          text: "FyfeWeb Net" 
+        },
+        { 
+          text: "SSD Storage" 
         },
         {
-          text: "Highly Modified Pterodactyl Panel",
+          text: "Java and Bedrock Supported"
         },
-        {
-          text: "FyfeWeb Net",
-        },
-        {
-          text: "SSD Storage",
+        { 
+          text: "Unlimited Players (You set the limit)" 
         }
       ],
-      link: "https://billing.nodebyte.host/store/minecraft-server-hosting"
+      link: "/services/mc"
     },
-    // {
-    //   title: "Custom Minecraft Plans",
-    //   info: "Grab yourself a custom Minecraft Plan and start hosting with specs you want!",
-    //   features: [
-    //     {
-    //       text: "Custom Specs",
-    //     },
-    //     {
-    //       text: "For Minecraft Hosting Only",
-    //     },
-    //     {
-    //       text: "Full Support!",
-    //     },
-    //   ],
-    //   link: "https://billing.nodebyte.host/submitticket.php?step=2&deptid=3"
-    // }
+    {
+      title: "Rust",
+      info: "Host a Rust server with full modding support and unbeatable performance. Grow your own epic community.",
+      features: [
+        { 
+          text: "99.6% Uptime SLA" 
+        },
+        { 
+          text: "BytePanel" 
+        },
+        { 
+          text: "FyfeWeb Net" 
+        },
+        { 
+          text: "SSD Storage" 
+        },
+        { 
+          text: "Modding Support" 
+        },
+        { 
+          text: "Rust+ Support"
+        }
+      ],
+      link: "/services/rust"
+    }
   ];
   const DATA_ITEMS_MARQUEE = [
     { title: "Purpur" },

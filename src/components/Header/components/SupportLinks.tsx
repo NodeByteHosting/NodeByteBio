@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-const ServiceLinksDropdown = () => {
+const SupportLinksDropdown = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const toggleDropdown = () => {
@@ -14,7 +14,7 @@ const ServiceLinksDropdown = () => {
                 className="text-white font-medium text-sm flex items-center space-x-1"
                 onClick={toggleDropdown}
             >
-                <span>{dropdownOpen ? "Games" : 'Games'}</span>
+                <span>{dropdownOpen ? "Support" : 'Support'}</span>
                 <svg
                     className="w-4 h-4 transform transition-transform"
                     style={{ transform: dropdownOpen ? "rotate(180deg)" : "rotate(0deg)" }}
@@ -30,16 +30,23 @@ const ServiceLinksDropdown = () => {
                 <div className="absolute right-0 mt-52 w-48 bg-gradient-to-tl from-grey-900 via-dark_gray to-black rounded-md shadow-lg z-10">
                     <div className="py-2">
                         <a
-                            href="/services/mc"
+                            href="/kb"
                             className="block px-4 py-2 text-white hover:text-blue"
                         >
-                            Minecraft Servers
+                            Knowledge Base
                         </a>
                         <a
-                            href="/services/rust"
+                            href="/status"
                             className="block px-4 py-2 text-white hover:text-blue"
                         >
-                            Rust
+                            Service Status
+                        </a>
+                        <a
+                            href="https://billing.nodebyte.host/submitticket.php"
+                            target="_blank"
+                            className="block px-4 py-2 text-white hover:text-blue"
+                        >
+                            Support Tickets
                         </a>
                     </div>
                 </div>
@@ -48,4 +55,4 @@ const ServiceLinksDropdown = () => {
     );
 };
 
-export default ServiceLinksDropdown;
+export default SupportLinksDropdown;

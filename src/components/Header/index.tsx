@@ -19,6 +19,7 @@ import {
 } from '@nextui-org/react';
 import PanelLinksDropdown from './components/PanelLinks';
 import ServiceLinksDropdown from './components/ServiceLinks';
+import SupportLinksDropdown from './components/SupportLinks';
 
 export const Header: FC = () => {
   const pathName = usePathname().replace('/', '');
@@ -80,6 +81,9 @@ export const Header: FC = () => {
               </ul>
               <div className="hidden lg:flex items-center space-x-4">
                 <ServiceLinksDropdown />
+              </div>
+              <div className="hidden lg:flex items-center space-x-4">
+                <SupportLinksDropdown />
               </div>
               <div className="hidden lg:flex items-center space-x-4">
                 <PanelLinksDropdown />

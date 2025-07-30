@@ -14,10 +14,6 @@ export const DATA_TOGGLE_MENU_LINKS = [
                 value: "Blog",
                 href: "/blog"
             },
-            {
-                value: "Partners",
-                href: "partners",
-            },
         ],
     },
     {
@@ -31,7 +27,6 @@ export const DATA_TOGGLE_MENU_LINKS = [
                 value: "Game Panel",
                 href: "https://panel.nodebyte.host",
             },
-            
         ],
     },
     {

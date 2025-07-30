@@ -3,11 +3,16 @@ import { motion } from "framer-motion";
 import AdvantageCard from "ui/AdvantageCard";
 import s from "styling/modules/Advantages/global.module.scss";
 import { useButtonScrollContext } from "@/src/providers/ButtonScroll";
-import { Server, Gamepad2, Shield, Settings, Clock, DollarSign } from "lucide-react";
+import { AppWindow, Gamepad2, Shield, Settings, Clock, DollarSign } from "lucide-react";
 
 export const Advantages: FC = ({ }) => {
   const { targetRef } = useContext(useButtonScrollContext);
   const DATA_CARDS = [
+    {
+      icon: <AppWindow strokeWidth={1.5} size={24} />,
+      title: "BytePanel",
+      content: "Our Game Panel offers easy server management with an intuitive interface and powerful features.",
+    },
     {
       icon: <Gamepad2 strokeWidth={1.5} size={24} />,
       title: "Minecraft Bliss",

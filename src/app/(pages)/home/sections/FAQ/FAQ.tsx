@@ -24,6 +24,10 @@ export const FAQ: FC = ({ }) => {
       title: "Do you offer customer support?",
       text: "Yes, we offer 24/7 customer support to assist you with any issues or questions you may have. Our dedicated support team is available via discord, email and support tickets to ensure that you receive timely and effective assistance.",
     },
+    {
+      title: "Can I upgrade or downgrade my plan?",
+      text: "Yes, all our plans are scalable, allowing you to upgrade or downgrade your plan as needed. You can easily adjust your resources through the billing panel to accommodate your changing requirements.",
+    }
   ];
   // Animation
   const animation = {

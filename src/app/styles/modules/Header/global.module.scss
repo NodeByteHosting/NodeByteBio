@@ -36,7 +36,7 @@
 
         .Nav {
             display: grid;
-            grid-template-columns: repeat(3, auto);
+            grid-template-columns: repeat(4, auto);
             justify-content: center;
             align-items: center;
 
@@ -53,7 +53,6 @@
                 display: grid;
                 grid-template-columns: repeat(4, auto);
                 grid-column-gap: 30px;
-                margin-right: 20px;
 
                 li {
                     a {

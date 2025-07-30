@@ -14,7 +14,7 @@ const PanelLinksDropdown = () => {
                 className="text-white font-medium text-sm flex items-center space-x-1"
                 onClick={toggleDropdown}
             >
-                <span>{dropdownOpen ? "What's this?" : 'Portals'}</span>
+                <span>{dropdownOpen ? "Client Area" : 'Client Area'}</span>
                 <svg
                     className="w-4 h-4 transform transition-transform"
                     style={{ transform: dropdownOpen ? "rotate(180deg)" : "rotate(0deg)" }}

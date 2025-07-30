@@ -26,7 +26,6 @@ export function CobeGlobe(props: ComponentPropsWithoutRef<"canvas">) {
                 glowColor: [0.2588, 0.8275, 0.5725],
                 markers: [
                     // locations are [latitude, longitude]
-                    { location: [51.1657, 10.4515], size: 0.07 },
                     { location: [55.3781, -3.4360], size: 0.07 }
                 ],
                 onRender: (state) => {

@@ -34,9 +34,8 @@ export const Hero: FC = ({ }) => {
               className="text-white "
             >
               <div className="border-1 border-gray/20 rounded-full py-2 px-3 bg-black_secondary">
-                Welcome to the{" "}
-                <span className="font-bold">exciting </span>
-                new <span className="font-bold">NodeByte </span> experience!
+                <span className="font-bold">Rust Hosting </span>
+                is now available!
               </div>
             </motion.h2>
             <motion.h1
