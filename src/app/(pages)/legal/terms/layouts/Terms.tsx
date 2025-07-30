@@ -44,7 +44,12 @@ export const TermsOfService: FC = ({ }) => {
             <PageHero
                 title="Terms of Service"
                 text="The stuff no one wants to read but everyone should know."
-                sup={{ title1: "Last updated", title2: "2024 -", title3: "11 -", title4: "20" }}
+                sup={{
+                    title1: "Last updated:",
+                    title2: "2nd",
+                    title3: "04",
+                    title4: "2025"
+}}
             />
             {error || !data ? (
                 <motion.section className="py-16 bg-dark">

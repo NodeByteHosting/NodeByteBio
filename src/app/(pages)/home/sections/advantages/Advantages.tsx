@@ -77,7 +77,7 @@ export const Advantages: FC = ({ }) => {
               Why choose us?
             </motion.h2>
             <motion.p variants={animation} custom={3} className="text-gray">
-              At NodeByte Hosting, we provide top-notch virtual private servers (VPS) and Minecraft servers tailored to meet your needs. Our services ensure high performance, reliability, and security for your business or gaming experience.
+              At NodeByte Hosting, we provide top-notch minecraft servers tailored to meet your needs. Our services ensure high performance, reliability, and security for gaming experience.
             </motion.p>
           </motion.section>
           <section className={s.Content}>

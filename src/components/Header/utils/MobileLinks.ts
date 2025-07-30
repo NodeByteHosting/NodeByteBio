@@ -33,10 +33,6 @@ export const DATA_TOGGLE_MENU_LINKS = [
         title: "Resources",
         links: [
             {
-                value: "Community Pulse",
-                href: "/pulse",
-            },
-            {
                 value: "Knowledge Base",
                 href: "/kb",
             },
@@ -54,17 +50,9 @@ export const DATA_TOGGLE_MENU_LINKS = [
         title: "Services",
         links: [
             {
-                value: "Dedicated Servers",
-                href: "/services/dedi",
-            },
-            {
                 value: "Minecraft Servers",
                 href: "/services/mc",
             },
-            {
-                value: "VPS Servers",
-                href: "/services/vps"
-            }
         ],
     },
     {

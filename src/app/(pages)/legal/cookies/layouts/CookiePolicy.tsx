@@ -45,10 +45,10 @@ export const CookiePolicy: FC = ({ }) => {
                 title="Cookie Policy"
                 text="The stuff no one wants to read but everyone should know."
                 sup={{
-                    title1: "Last updated",
-                    title2: "2024 -",
-                    title3: "11 -",
-                    title4: "20"
+                    title1: "Last updated:",
+                    title2: "21st",
+                    title3: "03",
+                    title4: "2025"
                 }}
             />
             {error || !data ? (

@@ -24,11 +24,11 @@ export const BASE_LINKS = [
         title: "Company",
         links: [
             {
-                value: "About Us",
-                href: "/about",
+                value: "Email",
+                href: "mailto:support@nodebyte.host",
             },
             {
-                value: "Contact Us",
+                value: "Submit Ticket",
                 href: "https://billing.nodebyte.host/submitticket.php",
             },
             {
@@ -36,8 +36,8 @@ export const BASE_LINKS = [
                 href: "/careers",
             },
             {
-                value: "Community Pulse",
-                href: "kb"
+                value: "LTD Site",
+                href: "https://nodebyte.co.uk/",
             },
         ],
     },

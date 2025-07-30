@@ -44,7 +44,12 @@ export const RefundPolicyLayout: FC = ({ }) => {
             <PageHero
                 title="Refund Policy"
                 text="The stuff no one wants to read but everyone should know."
-                sup={{ title1: "Last updated", title2: "2024 -", title3: "11 -", title4: "20" }}
+                sup={{
+                    title1: "Last updated:",
+                    title2: "17th",
+                    title3: "03",
+                    title4: "2024"
+}}
             />
             {error || !data ? (
                 <motion.section className="py-16 bg-dark">
