@@ -105,25 +105,6 @@ export const Footer: FC = () => {
                   </Tooltip>
                 ))}
               </div>
-
-              {/* Example TrustBox container */}
-              <div
-                className="trustpilot-widget"
-                data-locale="en-GB"
-                data-template-id="53aa8807dec7e10d38f59f36"
-                data-businessunit-id="YOUR_BUSINESS_UNIT_ID"
-                data-style-height="150px"
-                data-style-width="100%"
-                data-theme="dark"
-              >
-                <a
-                  href="https://uk.trustpilot.com/review/nodebyte.host"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Trustpilot
-                </a>
-              </div>
             </div>
           </section>
         </section>
