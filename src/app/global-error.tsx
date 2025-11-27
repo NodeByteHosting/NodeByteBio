@@ -1,9 +1,8 @@
 "use client";
 
 import type { Metadata } from "next";
-import { PageHero } from "components/PageHero";
+import dynamic from "next/dynamic";
 import { absoluteUrl } from "hooks/absoluteUrl";
-import ErrorLayout from "components/Static/ErrorLayout";
 import { useEffect, useState, useRef } from "react";
 
 export const metadata: Metadata = {
@@ -26,6 +25,9 @@ export const metadata: Metadata = {
     },
     metadataBase: absoluteUrl()
 }
+
+const PageHero = dynamic(() => import("components/PageHero").then((m) => m.PageHero));
+const ErrorLayout = dynamic(() => import("components/Static/ErrorLayout").then((m) => m.default));
 
 function DebugPanel({ error }: { error?: Error & { stack?: string } }) {
     const [logs, setLogs] = useState<string[]>([]);
@@ -121,6 +123,7 @@ function DebugPanel({ error }: { error?: Error & { stack?: string } }) {
         </section>
     );
 }
+
 
 export default function GlobalError({ error, reset }: { error: Error & { digest?: string }, reset: () => void }) {
     return (

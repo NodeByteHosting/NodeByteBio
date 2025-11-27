@@ -1,32 +1,38 @@
+import { MdHomeFilled } from "react-icons/md";
+import { IoBookSharp } from "react-icons/io5";
+import { GiDatabase } from "react-icons/gi";
+import { BiSolidUserVoice } from "react-icons/bi";
+import { FaBlog } from "react-icons/fa";
+
 export const ERROR_PAGE_LINKS = [
     {
         title: "Home",
         href: "/",
         suptTitle: "Return to Home page.",
-        icon: "MdHomeFilled",
+        icon: MdHomeFilled,
     },
     {
         title: "Documentation",
         href: "https://docs.nodebyte.host",
         suptTitle: "Start integrating our products with your project.",
-        icon: "IoBookSharp",
+        icon: IoBookSharp,
     },
     {
         title: "Knowledge Base",
         href: "/kb",
         suptTitle: "Find answers to common questions.",
-        icon: "GiDatabase",
+        icon: GiDatabase,
     },
     {
         title: "Get Support",
         href: "https://billing.nodebyte.host/submitticket.php",
         suptTitle: "Open a ticket to get help from our team.",
-        icon: "BiSolidUserVoice",
+        icon: BiSolidUserVoice,
     },
     {
         title: "Blog",
         href: "https://nodebyte.co.uk/blog",
         suptTitle: "Read our latest news and articles.",
-        icon: "PiContactlessPaymentFill",
+        icon: FaBlog,
     },
 ];

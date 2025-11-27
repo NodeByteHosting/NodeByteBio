@@ -14,7 +14,7 @@ export const logErrorToDiscord = async ({ title, message, status, page, source }
     const WEBHOOK_TOKEN = process.env.ERROR_HOOK_TOKEN;
 
     /** WILL USE CORDX'S PROXY HERE TO AVOID RATE LIMITS */
-    const WEBHOOK_URL = `https://proxy.cordx.lol/api/webhooks/${WEBHOOK_ID}/${WEBHOOK_TOKEN}`;
+    const WEBHOOK_URL = `https://discord.com/api/webhooks/${WEBHOOK_ID}/${WEBHOOK_TOKEN}`;
 
     const fields = [
         {

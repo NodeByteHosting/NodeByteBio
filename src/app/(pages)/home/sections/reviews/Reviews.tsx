@@ -41,21 +41,6 @@ export const Reviews: FC = () => {
     const [expandedReview, setExpandedReview] = useState<number | null>(null);
     const [direction, setDirection] = useState(1);
 
-    useEffect(() => {
-        const fetchReviews = async () => {
-            try {
-                const response = await fetch('/api/reviews');
-                const data = await response.json();
-                if (data.reviews && data.reviews.length > 0) {
-                    setReviews(data.reviews);
-                }
-            } catch (error) {
-                console.error('Error fetching reviews:', error);
-            }
-        };
-        fetchReviews();
-    }, []);
-
     const handleNext = () => {
         if (currentIndex < reviews.length - 1) {
             setDirection(1);

@@ -30,14 +30,12 @@ To run this project, you will need to set up the following environment variables
 
 | Variable Name       | Description                                      | Required |
 | ------------------- | ------------------------------------------------ | -------- |
-| `TAWK_TO_EMBED_URL` | The embed URL for Tawk.to live chat integration. | No       |
 | `GITHUB_API_URL`    | Base url for contacting the GitHub API.          | Yes      |
 | `GITHUB_PAT`        | Personal Access Token for GitHub API access.     | Yes      |
 | `ERROR_HOOK_ID`     | Discord webhook ID for error notifications.      | No       |
 | `ERROR_HOOK_TOKEN`  | Discord webhook token for error notifications.   | No       |
 | `UR_API_KEY`        | API key for UptimeRobot monitoring.              | Yes      |
 
-- `TAWK_TO_EMBED_URL`: This value should be filled out if you would like to test/update our live chat.
 - `GITHUB_API_URL`: This value is provided with the env template and is required for the Knowledge Base and Legal Pages.
 - `GITHUB_PAT`: Personal Access Token for GitHub API access required for Knowledge Base and Legal Pages.
 - `ERROR_HOOK_ID`: Discord webhook ID for error notifications (this is optional but recommended).

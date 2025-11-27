@@ -30,37 +30,30 @@ function heading<T extends keyof JSX.IntrinsicElements>(
 export function MdxContent({ code }: { code: string }) {
     const MDX = useMDXComponent(code);
 
+    // build a permissive components map to avoid strict MDX typing issues
+    const components: Record<string, any> = {
+        Card,
+        Cards,
+        pre: (props: any) => <Pre {...props} />,
+        h1: (props: any) => heading("h1", props),
+        h2: (props: any) => heading("h2", props),
+        h3: (props: any) => heading("h3", props),
+        h4: (props: any) => heading("h4", props),
+        h5: (props: any) => heading("h5", props),
+        h6: (props: any) => heading("h6", props),
+        a: (props: any) => {
+            const href = props.href as string | undefined;
+            if (!href) return <></>;
+
+            const isExternalUrl = !(href.startsWith("/") || href.startsWith("#"));
+
+            return <Link {...props} href={href} target={isExternalUrl ? "_blank" : "_self"} rel={isExternalUrl ? "noreferrer" : undefined} />;
+        },
+    };
+
     return (
         <div className="prose prose-text prose-pre:grid prose-pre:border-[1px] prose-code:bg-secondary prose-code:p-1 max-w-none">
-            <MDX
-                components={{
-                    Card: Card,
-                    Cards: Cards,
-                    pre: (props) => <Pre {...props} />,
-                    h1: (props) => heading("h1", props),
-                    h2: (props) => heading("h2", props),
-                    h3: (props) => heading("h3", props),
-                    h4: (props) => heading("h4", props),
-                    h5: (props) => heading("h5", props),
-                    h6: (props) => heading("h6", props),
-                    a: ({ href, ref, ...props }) => {
-                        if (href == null) return <></>;
-
-                        const isExternalUrl = !(
-                            href.startsWith("/") || href.startsWith("#")
-                        );
-
-                        return (
-                            <Link
-                                {...props}
-                                href={href}
-                                target={isExternalUrl ? "_blank" : "_self"}
-                                rel={isExternalUrl ? "noreferrer" : undefined}
-                            />
-                        );
-                    },
-                }}
-            />
+            <MDX components={components as any} />
         </div>
     );
 }

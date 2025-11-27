@@ -1,44 +1,36 @@
 "use client";
 import { CheckIcon, CopyIcon } from "lucide-react";
-import { ComponentProps, useRef, useState, useEffect } from "react";
+import React, { ComponentProps, forwardRef, useEffect, useRef, useImperativeHandle } from "react";
 
-export function Pre(props: ComponentProps<"pre">) {
-    const ref = useRef<HTMLPreElement>(null);
+export const Pre = forwardRef<HTMLPreElement, ComponentProps<"pre">>((props, forwardedRef) => {
+    const innerRef = useRef<HTMLPreElement | null>(null);
+
+    // expose the inner ref to parent via forwarded ref
+    // use non-null assertion for the handle return to satisfy React.Ref typing
+    useImperativeHandle(forwardedRef, () => innerRef.current!, [innerRef]);
+
     const onCopy = () => {
-        if (ref.current == null || ref.current.textContent == null) return;
-
-        navigator.clipboard.writeText(ref.current.textContent);
+        if (innerRef.current == null || innerRef.current.textContent == null) return;
+        navigator.clipboard.writeText(innerRef.current.textContent);
     };
 
     return (
         <div className="relative">
             <CopyButton onCopy={onCopy} />
-            <pre {...props} ref={ref}>
+            <pre {...props} ref={innerRef}>
                 {props.children}
             </pre>
         </div>
     );
-}
+});
 
 function CopyButton({ onCopy }: { onCopy: () => void }) {
-    const [checked, setChecked] = useState(false);
+    const [checked, setChecked] = React.useState(false);
 
     const onClick = () => {
         onCopy();
         setChecked(true);
     };
-
-    useEffect(() => {
-        if (!checked) return;
-
-        const timer = setTimeout(() => {
-            setChecked(false);
-        }, 1500);
-
-        return () => {
-            clearTimeout(timer);
-        };
-    }, [checked]);
 
     return (
         <button

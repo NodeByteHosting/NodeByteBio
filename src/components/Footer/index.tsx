@@ -18,28 +18,6 @@ import TrustpilotWidget from './TrustpilotWidget';
 export const Footer: FC = () => {
   const pathname = usePathname();
 
-  const TP_BUSINESS_ID = process.env.NEXT_PUBLIC_TRUSTPILOT_BUSINESS_ID;
-
-  // Load Trustpilot script dynamically only if a business id is set
-  useEffect(() => {
-    if (!TP_BUSINESS_ID) return;
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      try {
-        document.body.removeChild(script);
-      } catch (e) { /* ignore cleanup errors */ }
-    };
-  }, [TP_BUSINESS_ID]);
-
-  if (pathname.startsWith("/docs")) {
-    return null;
-  }
-
   const DATA_SOCIAL_ICONS = [
     {
       title: "GitHub",
@@ -99,26 +77,32 @@ export const Footer: FC = () => {
                 <li key={i}>
                   <h5 className="text-white">{item.title}</h5>
                   <div>
-                    {item.links.map((link, i) => (
-                      // prefer explicit disabled flag; if disabled render plain text
-                      link.disabled ? (
+                    {item.links.map((link, i) => {
+                      // runtime-narrow the union so TS knows which shape we have
+                      if ('disabled' in link && link.disabled) {
+                        return (
+                          <span key={i} className="text-white/50">
+                            {link.value}
+                          </span>
+                        );
+                      }
+                      if ('href' in link && link.href) {
+                        return (
+                          <Link
+                            key={i}
+                            className="text-white/50 hover:text-gradient-4"
+                            href={link.href}
+                          >
+                            {link.value}
+                          </Link>
+                        );
+                      }
+                      return (
                         <span key={i} className="text-white/50">
                           {link.value}
                         </span>
-                      ) : link.href ? (
-                        <Link
-                          key={i}
-                          className="text-white/50 hover:text-gradient-4"
-                          href={link.href}
-                        >
-                          {link.value}
-                        </Link>
-                      ) : (
-                        <span key={i} className="text-white/50">
-                          {link.value}
-                        </span>
-                      )
-                    ))}
+                      );
+                    })}
                   </div>
                 </li>
               ))}
