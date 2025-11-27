@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CareersLanding } from "components/Layouts/Careers";
+import dynamic from "next/dynamic";
 import { absoluteUrl } from "hooks/absoluteUrl";
 
 export const metadata: Metadata = {
@@ -18,12 +18,13 @@ export const metadata: Metadata = {
         title: "Careers",
         description: "View our current job openings and join the NodeByte team.",
         images: "/banner.png"
-
     },
     metadataBase: absoluteUrl()
-}
+};
 
+
+const CareersLanding = dynamic(() => import("components/Layouts/Careers").then((m) => m.CareersLanding));
 
 export default function CareersPage() {
-    return <CareersLanding />
+    return <CareersLanding />;
 }

@@ -31,6 +31,7 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.0.4",
     "cobe": "^0.6.3",
+    "chart.js": "^4.5.1",
     "cross-env": "^7.0.3",
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.5.2",

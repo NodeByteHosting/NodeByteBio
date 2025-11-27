@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import ServicesHero from '@/src/components/Layouts/games/rust/Hero';
-import ButtonScrollProvider from "providers/ButtonScroll";
-import WhyChooseUs from "@/src/components/Layouts/games/rust/Benefits";
-import ServersList from "@/src/components/Layouts/games/rust/Servers";
-import { FAQ } from "@/src/components/Layouts/games/rust/GeneralFAQs";
+import dynamic from "next/dynamic";
 import { absoluteUrl } from "hooks/absoluteUrl";
+
+// Dynamically load client-only components to avoid prerender errors
+const ServicesHero = dynamic(() => import('@/src/components/Layouts/games/rust/Hero').then(m => m.default));
+const ButtonScrollProvider = dynamic(() => import("providers/ButtonScroll").then(m => m.default));
+const WhyChooseUs = dynamic(() => import("@/src/components/Layouts/games/rust/Benefits").then(m => m.default));
+const ServersList = dynamic(() => import("@/src/components/Layouts/games/rust/Servers").then(m => m.default));
+const FAQ = dynamic(() => import("@/src/components/Layouts/games/rust/GeneralFAQs").then(m => m.FAQ));
 
 export const metadata: Metadata = {
     title: "Rust Hosting",
