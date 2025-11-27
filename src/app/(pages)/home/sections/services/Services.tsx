@@ -1,7 +1,4 @@
-import "atropos/css";
-
 import { FC } from "react";
-import Atropos from "atropos/react";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
@@ -15,22 +12,22 @@ export const Services: FC = ({ }) => {
       info: "Launch your own Minecraft world instantly. Play with friends or build a community—no experience needed.",
       features: [
         {
-          text: "99.6% Uptime SLA" 
+          text: "99.6% Uptime SLA"
         },
-        { 
-          text: "BytePanel" 
+        {
+          text: "BytePanel"
         },
-        { 
-          text: "FyfeWeb Net" 
+        {
+          text: "FyfeWeb Net"
         },
-        { 
-          text: "SSD Storage" 
+        {
+          text: "SSD Storage"
         },
         {
           text: "Java and Bedrock Supported"
         },
-        { 
-          text: "Unlimited Players (You set the limit)" 
+        {
+          text: "Unlimited Players (You set the limit)"
         }
       ],
       link: "/services/mc"
@@ -39,22 +36,22 @@ export const Services: FC = ({ }) => {
       title: "Rust",
       info: "Host a Rust server with full modding support and unbeatable performance. Grow your own epic community.",
       features: [
-        { 
-          text: "99.6% Uptime SLA" 
+        {
+          text: "99.6% Uptime SLA"
         },
-        { 
-          text: "BytePanel" 
+        {
+          text: "BytePanel"
         },
-        { 
-          text: "FyfeWeb Net" 
+        {
+          text: "FyfeWeb Net"
         },
-        { 
-          text: "SSD Storage" 
+        {
+          text: "SSD Storage"
         },
-        { 
-          text: "Modding Support" 
+        {
+          text: "Modding Support"
         },
-        { 
+        {
           text: "Rust+ Support"
         }
       ],
@@ -104,49 +101,42 @@ export const Services: FC = ({ }) => {
           </motion.section>
           <section className={s.Cards}>
             {DATA_CARDS.map((card, i) => (
-              <Atropos
-                rotateTouch={false}
-                highlight={false}
-                shadow={false}
-                className="bg-transparent"
+              <motion.article
                 key={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ amount: "some", once: true }}
+                variants={animation}
+                custom={i}
+                className={`${s.Card} rounded-lg border-1 border-gray/10 shadow bg-black_secondary hover:bg-dark_gray`}
               >
-                <motion.article
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ amount: "some", once: true }}
-                  variants={animation}
-                  custom={i}
-                  className={`${s.Card} rounded-lg border-1 border-gray/10 shadow bg-black_secondary hover:bg-dark_gray`}
-                >
-                  <h4 className="text-transparent bg-clip-text bg-gradient-to-br from-blue to-green">
-                    {card.title}
-                  </h4>
-                  <p className="text-white/50">{card.info}</p>
-                  <ul className={s.Features}>
-                    {card.features.map((item, i) => (
-                      <li key={i}>
-                        <i>
-                          <Check
-                            strokeWidth={2}
-                            className="text-blue dark:text-green"
-                            size={18}
-                          />
-                        </i>
-                        <p className="text-white/50">
-                          {item.text}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                  <ButtonGradient
-                    radius="sm"
-                    size="md"
-                    value="Grab one now!"
-                    href={card.link}
-                  />
-                </motion.article>
-              </Atropos>
+                <h4 className="text-transparent bg-clip-text bg-gradient-to-br from-blue to-green">
+                  {card.title}
+                </h4>
+                <p className="text-white/50">{card.info}</p>
+                <ul className={s.Features}>
+                  {card.features.map((item, i) => (
+                    <li key={i}>
+                      <i>
+                        <Check
+                          strokeWidth={2}
+                          className="text-blue dark:text-green"
+                          size={18}
+                        />
+                      </i>
+                      <p className="text-white/50">
+                        {item.text}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+                <ButtonGradient
+                  radius="sm"
+                  size="md"
+                  value="Grab one now!"
+                  href={card.link}
+                />
+              </motion.article>
             ))}
           </section>
           <section className={s.Integrations}>

@@ -58,7 +58,8 @@ export const PageHero: FC<PageHeroProps> = ({ title, text, sup }) => {
       </div>
 
       {/* Defer heavy canvas to client and load lazily; keep no-op fallback */}
-      <div className="bg-black opacity-50 z-0">
+      {/* Ensure the background canvas can't intercept pointer events */}
+      <div className="bg-black opacity-50 z-0 pointer-events-none">
         <Suspense fallback={null}>
           <CobeGlobe devicePixelRatioCap={1.5} samples={2000} mapBrightness={1.8} />
         </Suspense>

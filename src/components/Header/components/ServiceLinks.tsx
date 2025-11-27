@@ -33,7 +33,7 @@ const ServiceLinksDropdown = () => {
                             href="/games/mc"
                             className="block px-4 py-2 text-white hover:text-blue"
                         >
-                            Minecraft Servers
+                            Minecraft
                         </a>
                         <a
                             href="/games/rust"

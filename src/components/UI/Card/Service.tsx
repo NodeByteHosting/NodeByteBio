@@ -151,17 +151,19 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                         value={outOfStock ? "Out of Stock" : "Grab one now!"}
                         href={!outOfStock ? link : undefined}
                         className={cn(
-                            "w-full",
+                            "w-full z-40 pointer-events-auto",
                             outOfStock && "opacity-50 cursor-not-allowed"
                         )}
                         onClick={outOfStock ? undefined : undefined}
+                        onPress={outOfStock ? undefined : undefined}
                     />
                     <ButtonGradient
                         radius="lg"
                         size="lg"
                         value="More Info"
                         onClick={openModal}
-                        className="w-full"
+                        onPress={openModal}
+                        className="w-full z-40 pointer-events-auto"
                     />
                 </div>
             </div>

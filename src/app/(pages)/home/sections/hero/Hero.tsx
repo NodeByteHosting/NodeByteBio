@@ -34,7 +34,7 @@ export const Hero: FC = ({ }) => {
               className="text-white "
             >
               <div className="border-1 border-gray/20 rounded-full py-2 px-3 bg-black_secondary">
-              Get
+                Get
                 <span className="font-bold"> 10% off{" "}</span>
                 Your First Order with code {" "}
                 <span className="font-mono font-bold">WELCOME10</span>
@@ -54,7 +54,7 @@ export const Hero: FC = ({ }) => {
           </motion.section>
         </section>
       </div>
-      <div className="absolute inset-0 bg-black opacity-50 z-0">
+      <div className="absolute inset-0 bg-black opacity-50 z-0 pointer-events-none">
         <CobeGlobe />
       </div>
     </section>

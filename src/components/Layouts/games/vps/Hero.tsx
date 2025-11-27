@@ -46,7 +46,7 @@ const ServicesHero: FC = () => {
                     </motion.section>
                 </section>
             </div>
-            <div className="absolute inset-0 bg-black opacity-50 z-0">
+            <div className="absolute inset-0 bg-black opacity-50 z-0 pointer-events-none">
                 <CobeGlobe />
             </div>
         </section>

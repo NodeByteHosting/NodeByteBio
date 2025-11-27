@@ -3,7 +3,15 @@
 import { ComponentPropsWithoutRef, useEffect, useRef } from "react";
 import createGlobe from "cobe";
 
-export function CobeGlobe(props: ComponentPropsWithoutRef<"canvas">) {
+type CobeGlobeProps = ComponentPropsWithoutRef<"canvas"> & {
+    devicePixelRatioCap?: number;
+    samples?: number;
+    mapBrightness?: number;
+    width?: number;
+    height?: number;
+};
+
+export function CobeGlobe({ devicePixelRatioCap, samples, mapBrightness, width, height, ...canvasProps }: CobeGlobeProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
@@ -40,15 +48,15 @@ export function CobeGlobe(props: ComponentPropsWithoutRef<"canvas">) {
         let globe: { destroy?: () => void } | null = null;
         try {
             globe = createGlobe(canvasRef.current, {
-                devicePixelRatio: 2,
-                width: 600 * 2,
-                height: 550 * 2,
+                devicePixelRatio: devicePixelRatioCap ?? 2,
+                width: (width ?? 600) * (devicePixelRatioCap ?? 2),
+                height: (height ?? 550) * (devicePixelRatioCap ?? 2),
                 phi: 0,
                 theta: 0,
                 dark: 1,
                 diffuse: 1.2,
-                mapSamples: 16000,
-                mapBrightness: 6,
+                mapSamples: samples ?? 16000,
+                mapBrightness: mapBrightness ?? 6,
                 baseColor: [0.2588, 0.8275, 0.5725],
                 markerColor: [1.0, 1.0, 1.0],
                 glowColor: [0.2588, 0.8275, 0.5725],
@@ -78,5 +86,7 @@ export function CobeGlobe(props: ComponentPropsWithoutRef<"canvas">) {
         };
     }, []);
 
-    return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0" {...props} />;
+    // Prevent the canvas from intercepting pointer events so underlying UI remains clickable
+    // Spread only valid canvas props (we collected custom props above)
+    return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0 pointer-events-none" {...canvasProps} />;
 };

@@ -1,8 +1,6 @@
-'use client';
-import "atropos/css";
+"use client";
 
 import { FC } from "react";
-import Atropos from "atropos/react";
 import { motion } from "framer-motion";
 import s from "styling/modules/Services/global.module.scss";
 import { DataCard } from "types/services";
@@ -46,28 +44,21 @@ const ServersList: FC = () => {
     const renderCards = (dataCards: DataCard[]) => (
         <section className={s.Cards}>
             {dataCards.map((card, i) => (
-                <Atropos
-                    rotateTouch={false}
-                    highlight={false}
-                    shadow={false}
-                    className="bg-transparent"
+                <motion.article
                     key={i}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ amount: "some", once: true }}
+                    variants={animation}
+                    custom={i}
                 >
-                    <motion.article
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ amount: "some", once: true }}
-                        variants={animation}
-                        custom={i}
-                    >
-                        <ServiceCard
-                            {...card}
-                            borderRadius="0.5rem"
-                            className="h-full"
-                            containerClassName="h-full"
-                        />
-                    </motion.article>
-                </Atropos>
+                    <ServiceCard
+                        {...card}
+                        borderRadius="0.5rem"
+                        className="h-full"
+                        containerClassName="h-full"
+                    />
+                </motion.article>
             ))}
         </section>
     );
