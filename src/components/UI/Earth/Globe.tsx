@@ -16,8 +16,16 @@ export function CobeGlobe(props: ComponentPropsWithoutRef<"canvas">) {
                 const c = canvasRef.current;
                 if (!c || typeof c.getContext !== "function") return false;
                 // Try common WebGL context names
-                const ctx = c.getContext("webgl2") || c.getContext("webgl") || c.getContext("experimental-webgl");
-                return ctx != null;
+                const ctx: any = c.getContext("webgl2") || c.getContext("webgl") || c.getContext("experimental-webgl");
+                if (!ctx) return false;
+                // On some iOS beta builds the context object exists but `getContextAttributes()` may return null.
+                // Ensure getContextAttributes is callable and returns a non-null object with expected fields.
+                if (typeof ctx.getContextAttributes !== "function") return false;
+                const attrs = ctx.getContextAttributes();
+                if (!attrs) return false;
+                // `alpha` is the attribute our downstream code expects; ensure it's present (may be boolean)
+                if (typeof attrs.alpha === "undefined") return false;
+                return true;
             } catch (err) {
                 return false;
             }
