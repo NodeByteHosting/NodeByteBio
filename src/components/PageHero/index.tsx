@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, Suspense, useEffect, useState } from "react";
+import { FC, Suspense } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import s from "styling/modules/Hero/global.module.scss";
@@ -19,24 +19,6 @@ type PageHeroProps = {
 };
 
 export const PageHero: FC<PageHeroProps> = ({ title, text, sup }) => {
-  const [canRenderGlobe, setCanRenderGlobe] = useState(false);
-
-  useEffect(() => {
-    // Only attempt to render the WebGL globe on clients that support it.
-    try {
-      if (typeof window === "undefined") return;
-      const canvas = document.createElement("canvas");
-      // try webgl2 first, then webgl
-      const gl = canvas.getContext("webgl2") || canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
-      // Ensure getContext returned an object and supports getContextAttributes
-      if (gl && typeof (gl as any).getContextAttributes === "function") {
-        setCanRenderGlobe(true);
-      }
-    } catch (e) {
-      // if anything throws, don't render globe
-      setCanRenderGlobe(false);
-    }
-  }, []);
   const animation = {
     hidden: { x: -30, opacity: 0 },
     visible: (custom: number) => ({
@@ -78,9 +60,7 @@ export const PageHero: FC<PageHeroProps> = ({ title, text, sup }) => {
       {/* Defer heavy canvas to client and load lazily; keep no-op fallback */}
       <div className="bg-black opacity-50 z-0">
         <Suspense fallback={null}>
-          {canRenderGlobe ? (
-            <CobeGlobe devicePixelRatioCap={1.5} samples={2000} mapBrightness={1.8} />
-          ) : null}
+          <CobeGlobe devicePixelRatioCap={1.5} samples={2000} mapBrightness={1.8} />
         </Suspense>
       </div>
     </section>
