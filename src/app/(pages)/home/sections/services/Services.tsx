@@ -30,7 +30,7 @@ export const Services: FC = ({ }) => {
           text: "Unlimited Players (You set the limit)"
         }
       ],
-      link: "/services/mc"
+      link: "/games/mc"
     },
     {
       title: "Rust",
@@ -55,7 +55,7 @@ export const Services: FC = ({ }) => {
           text: "Rust+ Support"
         }
       ],
-      link: "/services/rust"
+      link: "/games/rust"
     }
   ];
   const DATA_ITEMS_MARQUEE = [
