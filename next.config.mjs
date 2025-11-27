@@ -3,6 +3,12 @@
 export default {
     compress: true,
     reactStrictMode: false,
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
+    typescript: {
+        ignoreBuildErrors: true,
+    },
     experimental: {
         optimizePackageImports: ['cobe'],
         optimisticClientCache: true
@@ -28,12 +34,6 @@ export default {
                 hostname: "toxicdev.me"
             }
         ]
-    },
-    eslint: {
-        ignoreDuringBuilds: true,
-    },
-    typescript: {
-        ignoreBuildErrors: true,
     },
     async headers() {
         return [

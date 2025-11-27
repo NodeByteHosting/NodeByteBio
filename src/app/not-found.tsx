@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
+import { PageHero } from 'components/PageHero';
+import ErrorLayout from 'components/Static/ErrorLayout';
 import { absoluteUrl } from "hooks/absoluteUrl";
 
 export const metadata: Metadata = {
@@ -22,9 +23,6 @@ export const metadata: Metadata = {
   metadataBase: absoluteUrl()
 };
 
-
-const PageHero = dynamic(() => import("components/PageHero").then((m) => m.PageHero));
-const ErrorLayout = dynamic(() => import("components/Static/ErrorLayout").then((m) => m.default));
 
 export default function NotFoundPage() {
   return (

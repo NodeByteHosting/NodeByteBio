@@ -1,13 +1,11 @@
 "use client";
 
 import { FC, Suspense } from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import s from "styling/modules/Hero/global.module.scss";
-// Lazy-load the heavy globe with no SSR to avoid blocking server render
-const CobeGlobe = require("next/dynamic")(
-  () => import("ui/Earth/Globe").then((m) => m.CobeGlobe),
-  { ssr: false, loading: () => null }
-);
+
+const CobeGlobe = dynamic(() => import("ui/Earth/Globe").then((m) => m.CobeGlobe), { ssr: false, loading: () => null });
 
 type PageHeroProps = {
   title: string;

@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
+import ServicesHero from '@/src/components/Layouts/games/mc/Hero';
+import ButtonScrollProvider from 'providers/ButtonScroll';
+import WhyChooseUs from '@/src/components/Layouts/games/mc/Benefits';
+import ServersList from '@/src/components/Layouts/games/mc/Servers';
+import { FAQ } from '@/src/components/Layouts/games/mc/GeneralFAQs';
 import { absoluteUrl } from "hooks/absoluteUrl";
 
-// Dynamically load client-only components to avoid prerender errors
-const ServicesHero = dynamic(() => import('@/src/components/Layouts/games/mc/Hero').then(m => m.default));
-const ButtonScrollProvider = dynamic(() => import("providers/ButtonScroll").then(m => m.default));
-const WhyChooseUs = dynamic(() => import("@/src/components/Layouts/games/mc/Benefits").then(m => m.default));
-const ServersList = dynamic(() => import("@/src/components/Layouts/games/mc/Servers").then(m => m.default));
-const FAQ = dynamic(() => import("@/src/components/Layouts/games/mc/GeneralFAQs").then(m => m.FAQ));
+// Components imported directly; Next will handle client boundaries for components that opt into it.
 
 export const metadata: Metadata = {
     title: "Minecraft Hosting",
