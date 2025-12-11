@@ -16,9 +16,9 @@ const faqs = [
       "Yes all plans include automated DDoS mitigation at the network edge. For large or targeted attacks we provide additional scrubbing services on higher tiers.",
   },
   {
-    question: "Where are your POPs located?",
+    question: "Where are your Servers located?",
     answer:
-      "We operate multiple Points-of-Presence across Europe with more regions coming online. Check our coverage map or contact sales for custom regions.",
+      "Our data center is located in Newcastle UK, we are soon to expand to additional regions based on customer demand.",
   },
   {
     question: "Can I run mods and custom maps?",
