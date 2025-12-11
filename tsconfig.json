@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ES5",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "baseUrl": ".",
     "allowJs": true,
+    "target": "ES6",
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
@@ -16,7 +15,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
@@ -26,63 +25,6 @@
     "paths": {
       "@/*": [
         "./*"
-      ],
-      "contentlayer/generated": [
-        "./.contentlayer/generated"
-      ],
-      "cache": [
-        "./src/lib/cache"
-      ],
-      "configs/*": [
-        "./src/configs/*"
-      ],
-      "consts/*": [
-        "./src/constants/*"
-      ],
-      "logger": [
-        "./src/lib/logger"
-      ],
-      "components/*": [
-        "./src/components/*"
-      ],
-      "fetchers/*": [
-        "./src/fetchers/*"
-      ],
-      "hooks/*": [
-        "./src/hooks/*"
-      ],
-      "layouts/*": [
-        "./src/components/Layouts/*"
-      ],
-      "lib/*": [
-        "./src/lib/*"
-      ],
-      "package": [
-        "./package.json"
-      ],
-      "pages/*": [
-        "./src/app/(pages)/*"
-      ],
-      "presets/*": [
-        "./presets/*"
-      ],
-      "providers/*": [
-        "./src/providers/*"
-      ],
-      "styling/*": [
-        "./src/app/styles/*"
-      ],
-      "tailwind": [
-        "./src/hooks/tailwindUtils"
-      ],
-      "types/*": [
-        "./src/types/*"
-      ],
-      "utils/*": [
-        "./src/utils/*"
-      ],
-      "ui/*": [
-        "./src/components/UI/*"
       ]
     }
   },
@@ -91,9 +33,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".contentlayer/generated",
-    "src/constants/secHeaders.ks",
-    "src/lib/logger.js"
+    ".next\\dev/types/**/*.ts",
+    ".next\\dev/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
