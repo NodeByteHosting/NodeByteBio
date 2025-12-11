@@ -28,7 +28,7 @@ const faqs = [
   {
     question: "What is your uptime SLA?",
     answer:
-      "We offer a 99.99% uptime SLA on production plans. See our terms for details and eligibility criteria.",
+      "We offer a 99.6% uptime SLA on production plans. See our terms for details and eligibility criteria.",
   },
   {
     question: "Can I get a trial before committing?",
