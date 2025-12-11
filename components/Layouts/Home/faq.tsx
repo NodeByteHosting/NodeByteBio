@@ -16,9 +16,9 @@ const faqs = [
       "Yes all plans include automated DDoS mitigation at the network edge. For large or targeted attacks we provide additional scrubbing services on higher tiers.",
   },
   {
-    question: "Where are your Servers located?",
+    question: "Where are your POPs located?",
     answer:
-      "Our data center is located in Newcastle UK, we are soon to expand to additional regions based on customer demand.",
+      "We operate multiple Points-of-Presence across the UK with more regions coming online. Check our coverage map or contact sales for custom regions.",
   },
   {
     question: "Can I run mods and custom maps?",
@@ -29,6 +29,11 @@ const faqs = [
     question: "What is your uptime SLA?",
     answer:
       "We offer a 99.99% uptime SLA on production plans. See our terms for details and eligibility criteria.",
+  },
+  {
+    question: "Can I get a trial before committing?",
+    answer:
+      "Yes, we offer a trial period for new users to test our services before making a commitment. Contact our support team for more details. This lasts for 7 days.",
   },
 ]
 
