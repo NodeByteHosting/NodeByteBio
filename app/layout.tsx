@@ -3,9 +3,15 @@ import type { Metadata } from "next"
 import { cookies } from "next/headers"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { NextIntlClientProvider } from "next-intl"
+import { getMessages, getLocale } from "next-intl/server"
 import "./globals.css"
-import { Toaster } from "@/components/ui/toaster"
-import { ThemeProvider } from "@/components/theme-provider"
+import { Toaster } from "@/packages/ui/components/ui/toaster"
+import { ThemeProvider } from "@/packages/ui/components/theme-provider"
+import { CurrencyProvider } from "@/packages/core/hooks/use-currency"
+import { LocaleProvider } from "@/packages/core/hooks/use-locale"
+import { LayoutChrome } from "@/packages/ui/components/layout-chrome"
+import { AuthProvider } from "@/packages/auth/components"
 
 const geist = Geist({
   subsets: ["latin"],
@@ -18,8 +24,55 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "NodeByte Hosting",
-  description: "Fast, reliable, scalable and secure hosting services for your gaming experience. Launch dedicated and managed game servers (Minecraft, Rust) with instant setup, DDoS protection and global low-latency networking."
+  title: {
+    default: "NodeByte Hosting",
+    template: "%s | NodeByte Hosting",
+  },
+  description: "Fast, reliable, scalable and secure hosting services for your gaming experience. Launch dedicated and managed game servers with instant setup, DDoS protection and low latency networking.",
+  metadataBase: new URL("https://nodebyte.host"),
+  keywords: ["game server hosting", "minecraft hosting", "rust server hosting", "hytale hosting", "ark server hosting", "dedicated servers", "vps hosting", "ddos protection", "low latency gaming", "cloud servers"],
+  applicationName: "NodeByte Hosting",
+  openGraph: {
+    siteName: "NodeByte Hosting",
+    description: "Fast, reliable, scalable and secure hosting services for your gaming experience. Launch dedicated and managed game servers with instant setup, DDoS protection and low latency networking.",
+    images: ["/og.png"],
+    creators: ["@CodeMeAPixel"],
+    locale: "en-US",
+    url: "https://nodebyte.host",
+  },
+  twitter: {
+    title: "NodeByte Hosting",
+    description: "Fast, reliable, scalable and secure hosting services for your gaming experience. Launch dedicated and managed game servers with instant setup, DDoS protection and low latency networking.",
+    images: ["/og.png"],
+    creator: "@CodeMeAPixel",
+    card: "summary_large_image",
+    site: "https://nodebyte.host",
+  },
+  appleWebApp: {
+    statusBarStyle: "black-translucent",
+    title: "NodeByte Hosting",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    }
+  },
+  other: {
+    "mobile-web-app-capable": "yes",
+  }
 }
 
 export default async function RootLayout({
@@ -33,18 +86,38 @@ export default async function RootLayout({
   const knownThemes = ["light", "dark", "midnight", "rose", "forest", "desert", "ocean"]
   const themeClass = themeCookie && knownThemes.includes(themeCookie) ? themeCookie : undefined
 
+  // Get locale and messages for next-intl
+  const locale = await getLocale()
+  const messages = await getMessages()
+
   const htmlClass = [geist.variable, geistMono.variable, themeClass].filter(Boolean).join(" ")
 
-  // If we know the theme server-side, set color-scheme so SSR HTML matches client
-  const darkThemes = ["light", "dark", "midnight", "forest", "rose", "desert", "ocean"]
-  const colorScheme = themeClass ? (darkThemes.includes(themeClass) ? 'dark' : 'light') : undefined
-
   return (
-    <html lang="en" className={htmlClass} style={colorScheme ? { colorScheme } : undefined}>
-      <body className={`font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-        </ThemeProvider>
+    <html 
+      lang={locale} 
+      className={htmlClass} 
+      translate="no"
+      suppressHydrationWarning 
+      suppressContentEditableWarning
+    >
+      <head>
+        {/* Prevent browser translation extensions from modifying the page */}
+        <meta name="google" content="notranslate" />
+      </head>
+      <body className={`font-sans antialiased notranslate`}>
+        <AuthProvider>
+          <NextIntlClientProvider messages={messages}>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <CurrencyProvider>
+                <LocaleProvider initialLocale={locale as any}>
+                  <LayoutChrome>
+                    {children}
+                  </LayoutChrome>
+                </LocaleProvider>
+              </CurrencyProvider>
+            </ThemeProvider>
+          </NextIntlClientProvider>
+        </AuthProvider>
         <Toaster />
         <Analytics />
       </body>

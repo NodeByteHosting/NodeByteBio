@@ -1,0 +1,383 @@
+// This is your Prisma schema file for NodeByte authentication
+// Docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "./generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================================================
+// USER & AUTH MODELS
+// ============================================================================
+
+// User model for authentication
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  password      String?   // bcrypt hashed - null for migrated users who haven't registered yet
+  username      String
+  firstName     String?
+  lastName      String?
+  isAdmin       Boolean   @default(false)
+  pterodactylId Int?      @unique // Link to Pterodactyl panel user ID
+  
+  // Migration status
+  isMigrated    Boolean   @default(false) // True once user registers/sets password on our site
+  
+  // Email verification
+  emailVerified DateTime?
+  
+  // Account status
+  isActive      Boolean   @default(true)
+  
+  // Timestamps
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  lastLoginAt   DateTime?
+  lastSyncedAt  DateTime? // Last time data was synced from panel
+  
+  // Relations
+  sessions      Session[]
+  servers       Server[]  // Servers owned by this user
+  
+  @@map("users")
+}
+
+// Session model for auth tokens
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  createdAt    DateTime @default(now())
+  
+  @@map("sessions")
+}
+
+// Verification tokens for email verification, password reset, etc.
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  type       String   @default("email") // email, password_reset, etc.
+  
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+// ============================================================================
+// PTERODACTYL SYNC MODELS - These mirror Pterodactyl data for local access
+// ============================================================================
+
+// Location (data center region)
+model Location {
+  id          Int      @id // Pterodactyl location ID
+  shortCode   String   @unique
+  description String?
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  nodes       Node[]
+  
+  @@map("locations")
+}
+
+// Node (physical/virtual server hosting game servers)
+model Node {
+  id                  Int      @id // Pterodactyl node ID
+  uuid                String   @unique
+  name                String
+  description         String?
+  fqdn                String   // Fully qualified domain name
+  scheme              String   @default("https") // http or https
+  behindProxy         Boolean  @default(false)
+  
+  // Resources
+  memory              BigInt   // Total memory in MB
+  memoryOverallocate  Int      @default(0) // Percentage
+  disk                BigInt   // Total disk in MB
+  diskOverallocate    Int      @default(0) // Percentage
+  
+  // Status
+  isPublic            Boolean  @default(true)
+  isMaintenanceMode   Boolean  @default(false)
+  
+  // Connection info (for internal use)
+  daemonListenPort    Int      @default(8080)
+  daemonSftpPort      Int      @default(2022)
+  daemonBase          String   @default("/var/lib/pterodactyl/volumes")
+  
+  // Location relation
+  locationId          Int
+  location            Location @relation(fields: [locationId], references: [id])
+  
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  
+  allocations         Allocation[]
+  servers             Server[]
+  
+  @@map("nodes")
+}
+
+// Allocation (IP:Port combination on a node)
+model Allocation {
+  id          Int      @id // Pterodactyl allocation ID
+  ip          String
+  port        Int
+  alias       String?  // Optional friendly name/hostname
+  notes       String?
+  isAssigned  Boolean  @default(false)
+  
+  nodeId      Int
+  node        Node     @relation(fields: [nodeId], references: [id], onDelete: Cascade)
+  
+  // Server relation (null if unassigned)
+  serverId    String?
+  server      Server?  @relation(fields: [serverId], references: [id], onDelete: SetNull)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@unique([ip, port])
+  @@map("allocations")
+}
+
+// Nest (category of eggs, e.g., "Minecraft", "Rust")
+model Nest {
+  id          Int      @id // Pterodactyl nest ID
+  uuid        String   @unique
+  name        String
+  description String?
+  author      String?
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  eggs        Egg[]
+  
+  @@map("nests")
+}
+
+// Egg (server type template, e.g., "Paper", "Vanilla", "Forge")
+model Egg {
+  id              Int      @id // Pterodactyl egg ID
+  uuid            String   @unique
+  name            String
+  description     String?
+  author          String?
+  
+  // Docker configuration
+  dockerImage     String?
+  dockerImages    Json?    // Available docker images
+  
+  // Startup configuration
+  startup         String?  // Startup command
+  configFrom      Int?     // Inherit config from another egg
+  
+  // Feature flags
+  scriptIsPrivileged Boolean @default(false)
+  copyScriptFrom     Int?
+  
+  nestId          Int
+  nest            Nest     @relation(fields: [nestId], references: [id], onDelete: Cascade)
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  servers         Server[]
+  variables       EggVariable[]
+  
+  @@map("eggs")
+}
+
+// Egg Variable (configuration options for an egg)
+model EggVariable {
+  id            Int      @id // Pterodactyl variable ID
+  eggId         Int
+  egg           Egg      @relation(fields: [eggId], references: [id], onDelete: Cascade)
+  
+  name          String
+  description   String?
+  envVariable   String   // Environment variable name
+  defaultValue  String?
+  userViewable  Boolean  @default(true)
+  userEditable  Boolean  @default(true)
+  rules         String?  // Validation rules
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  serverVariables ServerVariable[]
+  
+  @@map("egg_variables")
+}
+
+// ============================================================================
+// SERVER MODEL - Core game server data
+// ============================================================================
+
+model Server {
+  id                String   @id @default(cuid()) // Our internal ID
+  pterodactylId     Int      @unique // Pterodactyl server ID
+  uuid              String   @unique // Pterodactyl UUID
+  uuidShort         String?  // Short UUID for panel URLs
+  externalId        String?  @unique // External ID (e.g., billing system ID)
+  
+  name              String
+  description       String?
+  
+  // Status
+  status            ServerStatus @default(INSTALLING)
+  isSuspended       Boolean  @default(false)
+  
+  // Resource limits
+  memory            Int      // Memory limit in MB
+  swap              Int      @default(0)
+  disk              Int      // Disk limit in MB
+  io                Int      @default(500) // IO weight
+  cpu               Int      // CPU limit percentage
+  
+  // Network
+  oomDisabled       Boolean  @default(false) // OOM killer disabled
+  
+  // Database limits
+  databaseLimit     Int      @default(0)
+  allocationLimit   Int      @default(0)
+  backupLimit       Int      @default(0)
+  
+  // Startup
+  startup           String?  // Custom startup command
+  image             String?  // Docker image
+  
+  // Feature toggles
+  featureLimits     Json?    // Additional feature limits
+  
+  // Relations
+  ownerId           String
+  owner             User     @relation(fields: [ownerId], references: [id])
+  
+  nodeId            Int
+  node              Node     @relation(fields: [nodeId], references: [id])
+  
+  eggId             Int
+  egg               Egg      @relation(fields: [eggId], references: [id])
+  
+  // Timestamps
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  installedAt       DateTime?
+  lastSyncedAt      DateTime?
+  
+  // Related data
+  allocations       Allocation[]
+  variables         ServerVariable[]
+  databases         ServerDatabase[]
+  backups           ServerBackup[]
+  
+  @@map("servers")
+}
+
+enum ServerStatus {
+  INSTALLING
+  INSTALL_FAILED
+  SUSPENDED
+  RESTORING_BACKUP
+  RUNNING
+  OFFLINE
+  STARTING
+  STOPPING
+}
+
+// Server Variable (runtime configuration)
+model ServerVariable {
+  id              String   @id @default(cuid())
+  serverId        String
+  server          Server   @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  
+  variableId      Int
+  variable        EggVariable @relation(fields: [variableId], references: [id])
+  
+  value           String
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  @@unique([serverId, variableId])
+  @@map("server_variables")
+}
+
+// Server Database
+model ServerDatabase {
+  id              Int      @id // Pterodactyl database ID
+  serverId        String
+  server          Server   @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  
+  name            String
+  username        String
+  host            String
+  port            Int      @default(3306)
+  maxConnections  Int      @default(0) // 0 = unlimited
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  @@map("server_databases")
+}
+
+// Server Backup
+model ServerBackup {
+  id              String   @id // Pterodactyl backup UUID
+  serverId        String
+  server          Server   @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  
+  name            String
+  ignoredFiles    Json?    // Files/folders ignored in backup
+  sha256Hash      String?
+  bytes           BigInt   @default(0)
+  
+  isSuccessful    Boolean  @default(false)
+  isLocked        Boolean  @default(false)
+  
+  completedAt     DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  @@map("server_backups")
+}
+
+// ============================================================================
+// SYNC LOG - Track synchronization history
+// ============================================================================
+
+model SyncLog {
+  id          String   @id @default(cuid())
+  type        String   // users, servers, nodes, etc.
+  status      SyncStatus @default(PENDING)
+  
+  itemsTotal  Int      @default(0)
+  itemsSynced Int      @default(0)
+  itemsFailed Int      @default(0)
+  
+  error       String?
+  metadata    Json?
+  
+  startedAt   DateTime @default(now())
+  completedAt DateTime?
+  
+  @@map("sync_logs")
+}
+
+enum SyncStatus {
+  PENDING
+  RUNNING
+  COMPLETED
+  FAILED
+}
