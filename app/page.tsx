@@ -1,13 +1,11 @@
 "use client"
 
 import { useEffect } from "react"
-import { Hero } from "@/components/Layouts/Home/hero"
-import { Features } from "@/components/Layouts/Home/features"
-import { About } from "@/components/Layouts/Home/about"
-import { Download } from "@/components/Layouts/Home/games"
-import { FAQ } from "@/components/Layouts/Home/faq"
-import { Footer } from "@/components/Static/footer"
-import { Navigation } from "@/components/Static/navigation"
+import { Hero } from "@/packages/ui/components/Layouts/Home/hero"
+import { Features } from "@/packages/ui/components/Layouts/Home/features"
+import { About } from "@/packages/ui/components/Layouts/Home/about"
+import { Download } from "@/packages/ui/components/Layouts/Home/games"
+import { FAQ } from "@/packages/ui/components/Layouts/Home/faq"
 
 export default function Home() {
   useEffect(() => {
@@ -29,14 +27,12 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="relative min-h-screen overflow-hidden">
-      <Navigation />
+    <>
       <Hero />
       <Features />
       <FAQ />
       <About />
       <Download />
-      <Footer />
-    </main>
+    </>
   )
 }

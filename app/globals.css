@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 :root {
   /* Light theme (default) - soft slate / neutral light */
@@ -582,4 +583,76 @@
 
 .animate-glow {
   animation: glow 3s ease-in-out infinite;
+}
+
+/* Syntax Highlighting for Code Blocks (rehype-highlight) */
+.hljs {
+  color: var(--foreground);
+  background: transparent;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: oklch(0.55 0.02 240);
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition {
+  color: oklch(0.65 0.2 320);
+}
+
+.hljs-number,
+.hljs-string,
+.hljs-meta .hljs-meta-string,
+.hljs-literal,
+.hljs-doctag,
+.hljs-regexp {
+  color: oklch(0.7 0.15 140);
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: oklch(0.7 0.18 200);
+}
+
+.hljs-attribute,
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-class .hljs-title,
+.hljs-type {
+  color: oklch(0.75 0.15 80);
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-link {
+  color: oklch(0.65 0.15 30);
+}
+
+.hljs-built_in,
+.hljs-deletion {
+  color: oklch(0.65 0.2 25);
+}
+
+.hljs-formula {
+  background: oklch(0.2 0.02 240);
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
 }
