@@ -1,161 +1,158 @@
 # Security Policy
 
+## Supported Versions
+
+We actively maintain and provide security updates for the following versions:
+
+| Version | Supported          |
+| ------- | ------------------ |
+| 3.x.x   | :white_check_mark: |
+| < 3.0   | :x:                |
+
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in NodeByte Hosting, please **do not** open a public GitHub issue. Instead, please report it responsibly to our security team.
+We take the security of NodeByte Links seriously. If you believe you have found a security vulnerability, please report it to us as described below.
 
-### How to Report
+### Please DO NOT
 
-Email: **security@nodebyte.host**
+- Open a public GitHub issue for security vulnerabilities
+- Disclose the vulnerability publicly before it has been addressed
+- Exploit the vulnerability beyond what is necessary to demonstrate it
 
-Please include:
-- Description of the vulnerability
-- Steps to reproduce (if applicable)
-- Affected versions
-- Potential impact
-- Suggested fix (if you have one)
+### Please DO
 
-### Response Timeline
+1. **Email us directly** at [security@nodebyte.host](mailto:security@nodebyte.host)
+2. **Provide detailed information** including:
+   - Type of vulnerability
+   - Steps to reproduce
+   - Potential impact
+   - Suggested fix (if any)
+3. **Allow reasonable time** for us to respond and address the issue
 
-- **Initial Response**: Within 48 hours
-- **Status Update**: Within 1 week
-- **Resolution**: We aim to patch critical vulnerabilities within 2 weeks
+### What to Include in Your Report
+
+```
+Subject: [SECURITY] Brief description of vulnerability
+
+1. Vulnerability Type:
+   (e.g., XSS, CSRF, Information Disclosure, etc.)
+
+2. Affected Component:
+   (e.g., Settings Modal, Status API, Theme System)
+
+3. Steps to Reproduce:
+   1. Step one
+   2. Step two
+   3. ...
+
+4. Impact Assessment:
+   (What could an attacker potentially do?)
+
+5. Proof of Concept:
+   (Code, screenshots, or video if applicable)
+
+6. Suggested Remediation:
+   (Optional - your recommended fix)
+
+7. Your Contact Information:
+   (How we can reach you for follow-up)
+```
+
+## Response Timeline
+
+| Action | Timeline |
+|--------|----------|
+| Initial Response | Within 48 hours |
+| Status Update | Within 7 days |
+| Fix Development | Depends on severity |
+| Public Disclosure | After fix is deployed |
+
+## Severity Classification
+
+### Critical
+- Remote code execution
+- Authentication bypass
+- Data breach potential
+
+**Response**: Immediate priority, fix within 24-48 hours
+
+### High
+- Cross-site scripting (XSS)
+- Cross-site request forgery (CSRF)
+- Privilege escalation
+
+**Response**: High priority, fix within 7 days
+
+### Medium
+- Information disclosure
+- Session management issues
+- Missing security headers
+
+**Response**: Standard priority, fix within 30 days
+
+### Low
+- Minor information leaks
+- Non-sensitive configuration exposure
+- Best practice violations
+
+**Response**: Scheduled for next release
 
 ## Security Best Practices
 
-### For Administrators
+### For Users
 
-1. **Environment Variables**
-   - Never commit `.env.local` to version control
-   - Use strong values for `NEXTAUTH_SECRET`
-   - Rotate API keys regularly
-   - Store sensitive data in database, not environment files
+1. **Keep your browser updated** to the latest version
+2. **Use HTTPS** when accessing the site
+3. **Report suspicious activity** immediately
 
-2. **Database Security**
-   - Use strong passwords for PostgreSQL
-   - Enable SSL/TLS for database connections
-   - Keep PostgreSQL updated
-   - Use principle of least privilege for database users
+### For Contributors
 
-3. **Access Control**
-   - Regularly audit admin users
-   - Revoke access for inactive users
-   - Use strong passwords (minimum 12 characters)
-   - Enable two-factor authentication (when available)
+1. **Never commit secrets** (API keys, credentials, etc.)
+2. **Validate all inputs** in any new code
+3. **Use parameterized queries** for any database operations
+4. **Follow the principle of least privilege**
+5. **Keep dependencies updated** and audit regularly
 
-4. **API Key Management**
-   - Generate new keys in the admin panel
-   - Immediately disable compromised keys
-   - Use the "Reset" functionality if needed
-   - Never share API keys via email or chat
+## Security Features
 
-5. **Webhook Security**
-   - Test webhooks before enabling
-   - Monitor webhook delivery failures
-   - Use HTTPS for Discord webhook URLs
-   - Disable webhooks that are no longer needed
+NodeByte Links implements the following security measures:
 
-### For Developers
+### Client-Side
+- Content Security Policy (CSP) headers
+- XSS protection via React's built-in escaping
+- Secure cookie handling for themes
+- No sensitive data stored in localStorage
 
-1. **Code Review**
-   - All changes require code review
-   - Security-sensitive code gets extra scrutiny
-   - Follow secure coding practices
+### API Routes
+- Rate limiting on status API
+- Proper error handling without information leakage
+- CORS configuration
 
-2. **Dependencies**
-   - Keep dependencies updated
-   - Run `npm audit` regularly
-   - Review security advisories
-   - Use `npm ci` instead of `npm install` for stability
+### Infrastructure
+- HTTPS enforcement
+- Security headers via Next.js config
+- Regular dependency audits
 
-3. **Authentication**
-   - Never hardcode credentials
-   - Use environment variables or database storage
-   - Implement proper session management
-   - Validate and sanitize all inputs
+## Acknowledgments
 
-4. **Database**
-   - Use parameterized queries (Prisma handles this)
-   - Implement row-level security when needed
-   - Avoid SQL injection vulnerabilities
-   - Use migrations for schema changes
+We appreciate the security research community's efforts in helping keep NodeByte Links secure. Researchers who report valid security issues will be:
 
-5. **API Security**
-   - Validate request payloads
-   - Use appropriate HTTP status codes
-   - Implement rate limiting (recommended)
-   - Log suspicious activity
+- Credited in our security acknowledgments (with permission)
+- Thanked publicly (with permission)
+- Considered for our bug bounty program (when available)
 
-## Known Security Considerations
+## Contact
 
-### API Key Protection
-- API keys (Pterodactyl, GitHub, Crowdin, Resend) are masked as `••••••••••••••••••••` in the UI
-- Keys are stored in the database, not in `.env` files
-- Once saved, keys cannot be viewed again (only reset)
-- The system uses string comparison to prevent saving masked values
+- **Security Email**: [security@nodebyte.host](mailto:security@nodebyte.host)
+- **General Support**: [support@nodebyte.host](mailto:support@nodebyte.host)
+- **Discord**: [discord.gg/nodebyte](https://discord.gg/nodebyte)
 
-### Session Management
-- Sessions are encrypted and stored server-side
-- Session cookies have `httpOnly` and `secure` flags
-- Session expiration is configurable
-- All admin operations require valid session
+## Changes to This Policy
 
-### Maintenance Mode
-- Non-admin users are redirected to `/maintenance` page
-- Admins can bypass maintenance mode
-- Login and session endpoints still work during maintenance
-
-## Version Support
-
-| Version | Status | Support Until |
-|---------|--------|---------------|
-| 3.2.x   | Current | TBD |
-| 3.1.x   | Security Only | TBD |
-| < 3.1   | Unsupported | - |
-
-**Note**: Versions older than the current major version may have limited security support.
-
-## Security Disclosure
-
-We appreciate responsible disclosure and will:
-- Acknowledge receipt of your report
-- Work on a fix without public disclosure
-- Release a patch update
-- Credit you in the release notes (if desired)
-
-## Security Headers
-
-The platform implements:
-- Content Security Policy (CSP)
-- X-Content-Type-Options: nosniff
-- X-Frame-Options: SAMEORIGIN
-- X-XSS-Protection: 1; mode=block
-- Referrer-Policy: strict-origin-when-cross-origin
-
-## Compliance
-
-This project aims to follow:
-- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
-- [CWE/SANS Top 25](https://cwe.mitre.org/top25/)
-- Security best practices for Next.js applications
-
-## Incident Response
-
-If a security incident occurs:
-1. We will acknowledge the incident
-2. Work on immediate mitigation
-3. Prepare a security patch
-4. Release information publicly once patched
-5. Provide guidance to affected users
-
-## Security Contacts
-
-- **Security Team**: security@nodebyte.host
-- **General Support**: support@nodebyte.host
-- **Discord**: https://discord.gg/nodebyte
+We may update this security policy from time to time. Changes will be reflected in this document with an updated revision date.
 
 ---
 
-**Last Updated:** December 22, 2025
+**Last Updated**: December 2024
 
-Thank you for helping keep NodeByte Hosting secure!
+Thank you for helping keep NodeByte Links and our users safe! 🔒

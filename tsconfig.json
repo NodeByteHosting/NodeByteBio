@@ -32,9 +32,6 @@
       "@/hooks/*": [
         "./packages/core/hooks/*"
       ],
-      "@/i18n/*": [
-        "./packages/i18n/*"
-      ],
       "@/lib/*": [
         "./packages/core/lib/*"
       ]

@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
-import { useTranslations } from "next-intl"
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -140,7 +139,6 @@ function ThemeGridItem({
 
 export function ThemeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme()
-  const t = useTranslations()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => setMounted(true), [])
@@ -183,7 +181,7 @@ export function ThemeToggle() {
           variant="ghost"
           size="icon"
           className="h-9 w-9 rounded-full hover:bg-accent/80 transition-colors"
-          aria-label={t("theme.toggle")}
+          aria-label="Toggle theme"
         >
           <Icon className="h-[1.2rem] w-[1.2rem] transition-transform hover:rotate-12" />
         </Button>
@@ -197,7 +195,7 @@ export function ThemeToggle() {
         {/* Featured Themes (Top 3) */}
         <div className="space-y-3 mb-4">
           <DropdownMenuLabel className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-            {t("theme.appearance")}
+            Appearance
           </DropdownMenuLabel>
           {allThemes.featured.map((themeOption) => (
             <ThemeCard
@@ -231,7 +229,7 @@ export function ThemeToggle() {
         {/* Cool Tones */}
         <div className="space-y-3 mb-4">
           <DropdownMenuLabel className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-            {t("theme.coolTones")}
+            Cool Tones
           </DropdownMenuLabel>
           <div className="grid grid-cols-4 gap-2">
             {allThemes.cool.map((themeOption) => (
@@ -248,7 +246,7 @@ export function ThemeToggle() {
         {/* Warm Tones */}
         <div className="space-y-3 mb-4">
           <DropdownMenuLabel className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-            {t("theme.warmTones")}
+            Warm Tones
           </DropdownMenuLabel>
           <div className="grid grid-cols-4 gap-2">
             {allThemes.warm.map((themeOption) => (
@@ -265,7 +263,7 @@ export function ThemeToggle() {
         {/* Nature Themes */}
         <div className="space-y-3 mb-4">
           <DropdownMenuLabel className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-            {t("theme.nature")}
+            Nature
           </DropdownMenuLabel>
           <div className="grid grid-cols-4 gap-2">
             {allThemes.nature.map((themeOption) => (

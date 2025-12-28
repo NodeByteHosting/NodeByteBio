@@ -4,17 +4,14 @@ import { Button } from "@/packages/ui/components/ui/button"
 import { Card } from "@/packages/ui/components/ui/card"
 import { Home, ArrowLeft, Search, MessageCircle } from "lucide-react"
 import Link from "next/link"
-import { useTranslations } from "next-intl"
 import { Logo } from "@/packages/ui/components/logo"
 
 export function NotFoundPage() {
-  const t = useTranslations()
-
   const quickLinks = [
-    { href: "/", label: t("notFound.links.home"), icon: Home },
-    { href: "/games", label: t("notFound.links.games"), icon: Search },
-    { href: "/kb", label: t("notFound.links.kb"), icon: Search },
-    { href: "/contact", label: t("notFound.links.contact"), icon: MessageCircle },
+    { href: "/", label: "Home", icon: Home },
+    { href: "https://nodebyte.host", label: "Main Site", icon: Search },
+    { href: "https://nodebyte.host/kb", label: "Knowledge Base", icon: Search },
+    { href: "https://nodebyte.host/contact", label: "Contact", icon: MessageCircle },
   ]
 
   return (
@@ -41,28 +38,28 @@ export function NotFoundPage() {
         </div>
         
         <h1 className="text-3xl sm:text-4xl font-bold mb-4">
-          {t("notFound.title")}
+          Page Not Found
         </h1>
         <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto">
-          {t("notFound.description")}
+          The page you're looking for doesn't exist or has been moved.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button size="lg" className="rounded-full gap-2" asChild>
             <Link href="/">
               <Home className="w-5 h-5" />
-              {t("notFound.goHome")}
+              Go Home
             </Link>
           </Button>
           <Button size="lg" variant="outline" className="rounded-full gap-2" onClick={() => window.history.back()}>
             <ArrowLeft className="w-4 h-4" />
-            {t("notFound.goBack")}
+            Go Back
           </Button>
         </div>
 
         <Card className="border-border/50 bg-card/30 backdrop-blur-sm p-6">
           <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">
-            {t("notFound.quickLinks")}
+            Quick Links
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {quickLinks.map((link) => (

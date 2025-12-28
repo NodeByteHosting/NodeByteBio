@@ -813,3 +813,17 @@
   from { opacity: 0.04; transform: scale(1); }
   to { opacity: 0.10; transform: scale(1.01); }
 }
+
+/* Slow spin animation for profile avatar ring */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}

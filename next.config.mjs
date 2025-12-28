@@ -1,7 +1,3 @@
-import createNextIntlPlugin from 'next-intl/plugin'
-
-const withNextIntl = createNextIntlPlugin('./packages/i18n/request.ts')
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactCompiler: true,
@@ -11,14 +7,9 @@ const nextConfig = {
         protocol: "https",
         hostname: "**"
       }
-    ]
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
+    ],
     unoptimized: true,
   },
 }
 
-export default withNextIntl(nextConfig)
+export default nextConfig

@@ -2,9 +2,8 @@
 
 import { Button } from "@/packages/ui/components/ui/button"
 import { Card } from "@/packages/ui/components/ui/card"
-import { RefreshCw, Home, AlertTriangle, MessageCircle } from "lucide-react"
+import { RefreshCw, Home, AlertTriangle, MessageCircle, Mail } from "lucide-react"
 import Link from "next/link"
-import { useTranslations } from "next-intl"
 import { Logo } from "@/packages/ui/components/logo"
 
 interface ErrorPageProps {
@@ -13,8 +12,6 @@ interface ErrorPageProps {
 }
 
 export function ErrorPage({ error, reset }: ErrorPageProps) {
-  const t = useTranslations()
-
   return (
     <main className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
       {/* Background gradients */}
@@ -38,15 +35,15 @@ export function ErrorPage({ error, reset }: ErrorPageProps) {
         </div>
         
         <h1 className="text-3xl sm:text-4xl font-bold mb-4">
-          {t("errorPage.title")}
+          Something went wrong
         </h1>
         <p className="text-lg text-muted-foreground mb-4 max-w-md mx-auto">
-          {t("errorPage.description")}
+          We encountered an unexpected error. Please try again.
         </p>
         
         {error?.digest && (
           <p className="text-sm text-muted-foreground mb-8">
-            {t("errorPage.errorCode")}: <code className="px-2 py-1 rounded bg-muted font-mono text-xs">{error.digest}</code>
+            Error Code: <code className="px-2 py-1 rounded bg-muted font-mono text-xs">{error.digest}</code>
           </p>
         )}
 
@@ -54,34 +51,35 @@ export function ErrorPage({ error, reset }: ErrorPageProps) {
           {reset && (
             <Button size="lg" className="rounded-full gap-2" onClick={reset}>
               <RefreshCw className="w-5 h-5" />
-              {t("errorPage.tryAgain")}
+              Try Again
             </Button>
           )}
           <Button size="lg" variant="outline" className="rounded-full gap-2" asChild>
             <Link href="/">
               <Home className="w-4 h-4" />
-              {t("errorPage.goHome")}
+              Go Home
             </Link>
           </Button>
         </div>
 
         <Card className="border-border/50 bg-card/30 backdrop-blur-sm p-6">
           <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">
-            {t("errorPage.needHelp")}
+            Need Help?
           </h2>
           <p className="text-sm text-muted-foreground mb-4">
-            {t("errorPage.helpDescription")}
+            If this issue persists, reach out to our support team.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button variant="outline" className="gap-2 rounded-full" asChild>
               <Link href="https://discord.gg/wN58bTzzpW" target="_blank">
                 <MessageCircle className="w-4 h-4" />
-                {t("errorPage.joinDiscord")}
+                Join Discord
               </Link>
             </Button>
             <Button variant="outline" className="gap-2 rounded-full" asChild>
-              <Link href="/contact">
-                {t("errorPage.contactSupport")}
+              <Link href="mailto:info@nodebyte.co.uk">
+                <Mail className="w-4 h-4" />
+                Contact Support
               </Link>
             </Button>
           </div>
