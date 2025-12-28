@@ -29,7 +29,6 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: "NodeByte Hosting Links",
     description: "Quick links, resources, and FAQs for NodeByte Hosting. Fast, reliable, and secure game server hosting.",
-    creators: ["@CodeMeAPixel"],
     locale: "en-US",
     url: "https://links.nodebyte.host",
     type: "website",
