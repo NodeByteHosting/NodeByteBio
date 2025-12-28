@@ -136,12 +136,12 @@ export function ProfileHeader({ className }: ProfileHeaderProps) {
       {/* Avatar/Logo */}
       <div className="relative mb-6">
         {/* Animated ring */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-accent to-primary animate-spin-slow opacity-75 blur-md" />
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-accent to-primary opacity-50" />
+        <div className="absolute inset-0 rounded-full bg-linear-to-r from-primary via-accent to-primary animate-spin-slow opacity-75 blur-md" />
+        <div className="absolute inset-0 rounded-full bg-linear-to-r from-primary via-accent to-primary opacity-50" />
         
         {/* Logo container */}
         <div className="relative w-28 h-28 rounded-full bg-background flex items-center justify-center border-4 border-background shadow-2xl">
-          <Logo size={64} className="drop-shadow-lg" />
+          <Logo size={98} className="drop-shadow-lg animate-float animate-pulse-glow logo-hover" />
         </div>
         
         {/* Status indicator badge */}
