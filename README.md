@@ -1,6 +1,6 @@
 # NodeByte Links
 
-A modern, stylish "Link in Bio" website for NodeByte Hosting — your one-stop hub for quick links, FAQs, and social connections.
+A modern, stylish "Link in Bio" website for NodeByte Hosting your one-stop hub for quick links, FAQs, and social connections.
 
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-15+-black?logo=next.js)](https://nextjs.org/)
