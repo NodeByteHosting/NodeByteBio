@@ -29,12 +29,12 @@ const faqItems: FAQItem[] = [
   {
     question: "Do you offer DDoS protection?",
     answer:
-      "Yes! All our servers come with enterprise-grade DDoS protection included at no extra cost. We use advanced filtering to ensure your gaming experience remains uninterrupted.",
+      "Yes! All our servers come with enterprise grade DDoS protection included at no extra cost. We use advanced filtering to ensure your gaming experience remains uninterrupted.",
   },
   {
     question: "What payment methods do you accept?",
     answer:
-      "We accept all major credit/debit cards, PayPal, and various cryptocurrency options. All payments are processed securely through our payment partners.",
+      "We accept all major credit/debit cards, Stripe and PayPal. All payments are processed securely through our payment partners.",
   },
   {
     question: "Can I upgrade my server later?",
