@@ -30,7 +30,7 @@ const socialLinks: SocialLink[] = [
     href: "https://bsky.app/profile/nodebyte.host",
     icon: FaBlueSky,
     label: "BlueSky",
-    color: color: "hover:bg-foreground hover:text-background hover:border-foreground",
+    color: "hover:bg-foreground hover:text-background hover:border-foreground",
   },
   {
     href: "https://github.com/NodeByteHosting",
