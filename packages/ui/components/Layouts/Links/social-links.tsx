@@ -2,8 +2,7 @@
 
 import * as React from "react"
 import { cn } from "@/lib/utils"
-import { SiDiscord, SiTrustpilot, SiX, SiGithub } from "react-icons/si"
-import { FaBlueSky } from "react-icons/fa"
+import { SiDiscord, SiTrustpilot, SiX, SiGithub, SiBluesky } from "react-icons/si"
 import { Mail } from "lucide-react"
 
 interface SocialLink {
@@ -28,7 +27,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     href: "https://bsky.app/profile/nodebyte.host",
-    icon: FaBlueSky,
+    icon: SiBluesky,
     label: "BlueSky",
     color: "hover:bg-foreground hover:text-background hover:border-foreground",
   },
