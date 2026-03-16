@@ -14,7 +14,7 @@ interface SocialLink {
 
 const socialLinks: SocialLink[] = [
   {
-    href: "https://discord.gg/wN58bTzzpW",
+    href: "https://discord.gg/nodebyte",
     icon: SiDiscord,
     label: "Discord",
     color: "hover:bg-[#5865F2] hover:border-[#5865F2]",
