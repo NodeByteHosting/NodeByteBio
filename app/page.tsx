@@ -12,7 +12,7 @@ import {
   Globe,
   Server,
   Gamepad2,
-  GamepadDirectional,
+  Gamepad,
   Blocks,
   ShoppingCart,
   LayoutDashboard,
@@ -42,7 +42,7 @@ const quickLinks = [
     href: "https://billing.nodebyte.host/store/hytale-hosting",
     title: "Hytale Hosting",
     description: "The ultimate home for your Hytale community.",
-    icon: GamepadDirectional,
+    icon: Gamepad,
     external: true,
   },
   {
