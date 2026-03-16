@@ -9,8 +9,10 @@ import {
   ConfigProvider,
 } from "@/packages/ui/components/Layouts/Links"
 import {
+  Globe,
   Server,
   Gamepad2,
+  GamepadDirectional,
   Blocks,
   ShoppingCart,
   LayoutDashboard,
@@ -25,8 +27,22 @@ const quickLinks = [
     href: "https://nodebyte.host",
     title: "Main Website",
     description: "Explore our full range of hosting services",
-    icon: Server,
+    icon: Globe,
     featured: true,
+    external: true,
+  },
+  {
+    href: "https://billing.nodebyte.host/store/vps-hosting",
+    title: "VPS Servers",
+    description: "Enterprise grade cloud compute and root access",
+    icon: Server,
+    external: true,
+  },
+  {
+    href: "https://billing.nodebyte.host/store/hytale-hosting",
+    title: "Hytale Hosting",
+    description: "The ultimate home for your Hytale community.",
+    icon: GamepadDirectional,
     external: true,
   },
   {
