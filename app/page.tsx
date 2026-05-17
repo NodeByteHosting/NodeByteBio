@@ -34,7 +34,7 @@ const quickLinks = [
   {
     href: "https://billing.nodebyte.host/products/amdvps",
     title: "AMD VPS Servers",
-    description: "Enterprise grade AMD powered cloud compute.",
+    description: "Enterprise grade AMD cloud servers.",
     icon: Server,
     external: true,
   },
